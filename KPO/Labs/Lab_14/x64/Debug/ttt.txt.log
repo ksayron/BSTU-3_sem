@@ -1,0 +1,13 @@
+Тест без ошибок 
+Тест без ошибок 
+
+--—- Протокол ——--
+Дата: 15.10.24 17:44:18
+--—- Параметры ——--
+ -in: 	D:\BSTU\KPO\Labs\Lab_14\x64\Debug\ttt.txt
+ -out:	D:\BSTU\KPO\Labs\Lab_14\x64\Debug\ttt.txt.out
+ -log:	D:\BSTU\KPO\Labs\Lab_14\x64\Debug\ttt.txt.log
+--—- Исходные данные ——-- 
+Кол-во символов:	18
+Кол-во строк:   	1
+Пропущенно:     	0

@@ -1,0 +1,14 @@
+﻿  Error.cpp
+  FST.cpp
+D:\BSTU\KPO\Labs\Lab_14\Lab_14\FST.cpp(66,17): warning C4267: инициализация: преобразование из "size_t" в "short"; возможна потеря данных
+  In.cpp
+D:\BSTU\KPO\Labs\Lab_14\Lab_14\In.cpp(39,14): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+D:\BSTU\KPO\Labs\Lab_14\Lab_14\In.cpp(41,14): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  IT.cpp
+  Log.cpp
+  LT.cpp
+  main.cpp
+  Out.cpp
+  Parm.cpp
+  Создание кода...
+  Lab_14.vcxproj -> D:\BSTU\KPO\Labs\Lab_14\Debug\Lab_14.exe

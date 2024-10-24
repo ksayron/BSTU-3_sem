@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\BSTU\\KPO\\Labs\\Floid-Yourshell\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{51295514-F872-441F-AA59-9CE0C00F11C2}|Floid-Yourshell\\Floid-Yourshell.vcxproj|D:\\BSTU\\KPO\\Labs\\Floid-Yourshell\\Floid-Yourshell\\Floid-Yourshell.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{51295514-F872-441F-AA59-9CE0C00F11C2}|Floid-Yourshell\\Floid-Yourshell.vcxproj|solutionrelative:Floid-Yourshell\\Floid-Yourshell.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Floid-Yourshell.cpp",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Floid-Yourshell\\Floid-Yourshell\\Floid-Yourshell.cpp",
+              "RelativeDocumentMoniker": "Floid-Yourshell\\Floid-Yourshell.cpp",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Floid-Yourshell\\Floid-Yourshell\\Floid-Yourshell.cpp",
+              "RelativeToolTip": "Floid-Yourshell\\Floid-Yourshell.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-02T11:44:31.202Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

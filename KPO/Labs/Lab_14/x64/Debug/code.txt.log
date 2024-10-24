@@ -1,0 +1,9 @@
+----Протокол----24.10.2024 15:38:23
+----Параметры----
+-log:D:\BSTU\KPO\Labs\Lab_14\x64\Debug\code.txt.log
+-out: D:\BSTU\KPO\Labs\Lab_14\x64\Debug\code.txt.out
+-in: D:\BSTU\KPO\Labs\Lab_14\x64\Debug\code.txt
+----Исходные данные----
+Количество символов: 553
+Проигнорировано: 28
+Количество строк: 37

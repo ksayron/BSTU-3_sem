@@ -1,0 +1,346 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\BSTU\\KPO\\Labs\\Lab_14\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Out.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\Out.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\FST.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\FST.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\FST.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\FST.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\IT.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\IT.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Out.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\Out.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\IT.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\IT.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\LT.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\LT.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Alphabet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\Alphabet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Alphabet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\Alphabet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\stdafx.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\stdafx.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\In.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\In.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\In.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\In.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\LT.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\LT.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Error.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\Error.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Error.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\Error.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Log.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\Log.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Parm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\Parm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Parm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B11588C8-E217-44DB-91EA-43AB7E2C96E9}|Lab_14\\Lab_14.vcxproj|solutionrelative:Lab_14\\Parm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 13,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "In.cpp",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\In.cpp",
+              "RelativeDocumentMoniker": "Lab_14\\In.cpp",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\In.cpp",
+              "RelativeToolTip": "Lab_14\\In.cpp",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAMwCMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-04T12:19:33.335Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "In.h",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\In.h",
+              "RelativeDocumentMoniker": "Lab_14\\In.h",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\In.h",
+              "RelativeToolTip": "Lab_14\\In.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-03T14:41:03.908Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IT.h",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\IT.h",
+              "RelativeDocumentMoniker": "Lab_14\\IT.h",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\IT.h",
+              "RelativeToolTip": "Lab_14\\IT.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-24T11:58:54.34Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IT.cpp",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\IT.cpp",
+              "RelativeDocumentMoniker": "Lab_14\\IT.cpp",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\IT.cpp",
+              "RelativeToolTip": "Lab_14\\IT.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-24T11:58:44.852Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Alphabet.cpp",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Alphabet.cpp",
+              "RelativeDocumentMoniker": "Lab_14\\Alphabet.cpp",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Alphabet.cpp",
+              "RelativeToolTip": "Lab_14\\Alphabet.cpp",
+              "ViewState": "AgIAABIBAAAAAAAAAAAawPQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-24T12:21:47.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Alphabet.h",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Alphabet.h",
+              "RelativeDocumentMoniker": "Lab_14\\Alphabet.h",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Alphabet.h",
+              "RelativeToolTip": "Lab_14\\Alphabet.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHwAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-24T12:15:52.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LT.cpp",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\LT.cpp",
+              "RelativeDocumentMoniker": "Lab_14\\LT.cpp",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\LT.cpp",
+              "RelativeToolTip": "Lab_14\\LT.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-24T11:58:29.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LT.h",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\LT.h",
+              "RelativeDocumentMoniker": "Lab_14\\LT.h",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\LT.h",
+              "RelativeToolTip": "Lab_14\\LT.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-24T11:57:14.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FST.h",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\FST.h",
+              "RelativeDocumentMoniker": "Lab_14\\FST.h",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\FST.h",
+              "RelativeToolTip": "Lab_14\\FST.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-24T11:52:29.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FST.cpp",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\FST.cpp",
+              "RelativeDocumentMoniker": "Lab_14\\FST.cpp",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\FST.cpp",
+              "RelativeToolTip": "Lab_14\\FST.cpp",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAE4AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-24T11:52:19.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\main.cpp",
+              "RelativeDocumentMoniker": "Lab_14\\main.cpp",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\main.cpp",
+              "RelativeToolTip": "Lab_14\\main.cpp",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-04T14:15:10.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Parm.h",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Parm.h",
+              "RelativeDocumentMoniker": "Lab_14\\Parm.h",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Parm.h",
+              "RelativeToolTip": "Lab_14\\Parm.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-04T20:39:26.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Parm.cpp",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Parm.cpp",
+              "RelativeDocumentMoniker": "Lab_14\\Parm.cpp",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Parm.cpp",
+              "RelativeToolTip": "Lab_14\\Parm.cpp",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwDkAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-04T20:38:46.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Out.cpp",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Out.cpp",
+              "RelativeDocumentMoniker": "Lab_14\\Out.cpp",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Out.cpp",
+              "RelativeToolTip": "Lab_14\\Out.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-04T20:38:22.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Log.h",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Log.h",
+              "RelativeDocumentMoniker": "Lab_14\\Log.h",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Log.h",
+              "RelativeToolTip": "Lab_14\\Log.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-04T20:36:59.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "stdafx.h",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\stdafx.h",
+              "RelativeDocumentMoniker": "Lab_14\\stdafx.h",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\stdafx.h",
+              "RelativeToolTip": "Lab_14\\stdafx.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-04T20:09:58.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Log.cpp",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Log.cpp",
+              "RelativeDocumentMoniker": "Lab_14\\Log.cpp",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Log.cpp",
+              "RelativeToolTip": "Lab_14\\Log.cpp",
+              "ViewState": "AgIAADoAAAAAAAAAAAAQwGYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-04T20:09:45.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Error.h",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Error.h",
+              "RelativeDocumentMoniker": "Lab_14\\Error.h",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Error.h",
+              "RelativeToolTip": "Lab_14\\Error.h",
+              "ViewState": "AgIAAAcAAAAAAAAAAABBwBEAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-04T20:00:46.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Error.cpp",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Error.cpp",
+              "RelativeDocumentMoniker": "Lab_14\\Error.cpp",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Error.cpp",
+              "RelativeToolTip": "Lab_14\\Error.cpp",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwE4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-04T20:01:18.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Out.h",
+              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Out.h",
+              "RelativeDocumentMoniker": "Lab_14\\Out.h",
+              "ToolTip": "D:\\BSTU\\KPO\\Labs\\Lab_14\\Lab_14\\Out.h",
+              "RelativeToolTip": "Lab_14\\Out.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-04T19:57:05.666Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

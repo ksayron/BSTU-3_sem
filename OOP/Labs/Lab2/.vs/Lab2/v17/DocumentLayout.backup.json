@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\BSTU\\OOP\\Labs\\Lab2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{403BA248-D945-4164-B716-C0AB7FEF4DC0}|Lab2\\Lab2.csproj|d:\\bstu\\oop\\labs\\lab2\\lab2\\stack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{403BA248-D945-4164-B716-C0AB7FEF4DC0}|Lab2\\Lab2.csproj|solutionrelative:lab2\\stack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{403BA248-D945-4164-B716-C0AB7FEF4DC0}|Lab2\\Lab2.csproj|d:\\bstu\\oop\\labs\\lab2\\lab2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{403BA248-D945-4164-B716-C0AB7FEF4DC0}|Lab2\\Lab2.csproj|solutionrelative:lab2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{403BA248-D945-4164-B716-C0AB7FEF4DC0}|Lab2\\Lab2.csproj|d:\\bstu\\oop\\labs\\lab2\\lab2\\person1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{403BA248-D945-4164-B716-C0AB7FEF4DC0}|Lab2\\Lab2.csproj|solutionrelative:lab2\\person1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{403BA248-D945-4164-B716-C0AB7FEF4DC0}|Lab2\\Lab2.csproj|d:\\bstu\\oop\\labs\\lab2\\lab2\\person2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{403BA248-D945-4164-B716-C0AB7FEF4DC0}|Lab2\\Lab2.csproj|solutionrelative:lab2\\person2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Person2.cs",
+              "DocumentMoniker": "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\Person2.cs",
+              "RelativeDocumentMoniker": "Lab2\\Person2.cs",
+              "ToolTip": "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\Person2.cs",
+              "RelativeToolTip": "Lab2\\Person2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T06:34:39.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Person1.cs",
+              "DocumentMoniker": "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\Person1.cs",
+              "RelativeDocumentMoniker": "Lab2\\Person1.cs",
+              "ToolTip": "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\Person1.cs",
+              "RelativeToolTip": "Lab2\\Person1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T06:34:23.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\Program.cs",
+              "RelativeDocumentMoniker": "Lab2\\Program.cs",
+              "ToolTip": "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\Program.cs",
+              "RelativeToolTip": "Lab2\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T22:46:52.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Stack.cs",
+              "DocumentMoniker": "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\Stack.cs",
+              "RelativeDocumentMoniker": "Lab2\\Stack.cs",
+              "ToolTip": "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\Stack.cs",
+              "RelativeToolTip": "Lab2\\Stack.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAswA4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T20:14:22.039Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

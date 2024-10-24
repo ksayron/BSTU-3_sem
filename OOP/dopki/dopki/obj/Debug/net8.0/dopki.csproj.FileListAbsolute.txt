@@ -1,0 +1,14 @@
+D:\BSTU\OOP\dopki\dopki\bin\Debug\net8.0\dopki.exe
+D:\BSTU\OOP\dopki\dopki\bin\Debug\net8.0\dopki.deps.json
+D:\BSTU\OOP\dopki\dopki\bin\Debug\net8.0\dopki.runtimeconfig.json
+D:\BSTU\OOP\dopki\dopki\bin\Debug\net8.0\dopki.dll
+D:\BSTU\OOP\dopki\dopki\bin\Debug\net8.0\dopki.pdb
+D:\BSTU\OOP\dopki\dopki\obj\Debug\net8.0\dopki.GeneratedMSBuildEditorConfig.editorconfig
+D:\BSTU\OOP\dopki\dopki\obj\Debug\net8.0\dopki.AssemblyInfoInputs.cache
+D:\BSTU\OOP\dopki\dopki\obj\Debug\net8.0\dopki.AssemblyInfo.cs
+D:\BSTU\OOP\dopki\dopki\obj\Debug\net8.0\dopki.csproj.CoreCompileInputs.cache
+D:\BSTU\OOP\dopki\dopki\obj\Debug\net8.0\dopki.dll
+D:\BSTU\OOP\dopki\dopki\obj\Debug\net8.0\refint\dopki.dll
+D:\BSTU\OOP\dopki\dopki\obj\Debug\net8.0\dopki.pdb
+D:\BSTU\OOP\dopki\dopki\obj\Debug\net8.0\dopki.genruntimeconfig.cache
+D:\BSTU\OOP\dopki\dopki\obj\Debug\net8.0\ref\dopki.dll

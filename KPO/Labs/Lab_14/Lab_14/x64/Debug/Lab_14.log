@@ -1,0 +1,3 @@
+﻿  In.cpp
+D:\BSTU\KPO\Labs\Lab_14\Lab_14\In.cpp(36,14): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  Lab_14.vcxproj -> D:\BSTU\KPO\Labs\Lab_14\x64\Debug\Lab_14.exe

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\BSTU\\OOP\\Labs\\Animal_King\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5FDF714A-D95E-4B34-B6B3-6C7266A51323}|Animal_King\\Animal_King.csproj|d:\\bstu\\oop\\labs\\animal_king\\animal_king\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FDF714A-D95E-4B34-B6B3-6C7266A51323}|Animal_King\\Animal_King.csproj|solutionrelative:animal_king\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\BSTU\\OOP\\Labs\\Animal_King\\Animal_King\\Program.cs",
+              "RelativeDocumentMoniker": "Animal_King\\Program.cs",
+              "ToolTip": "D:\\BSTU\\OOP\\Labs\\Animal_King\\Animal_King\\Program.cs",
+              "RelativeToolTip": "Animal_King\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:07:55.171Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

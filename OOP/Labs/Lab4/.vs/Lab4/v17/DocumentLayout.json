@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\BSTU\\OOP\\Labs\\Lab4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5683CC5-5AB7-4800-B1FA-54092F48BEB1}|Lab4\\Lab4.csproj|d:\\bstu\\oop\\labs\\lab4\\lab4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5683CC5-5AB7-4800-B1FA-54092F48BEB1}|Lab4\\Lab4.csproj|solutionrelative:lab4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5683CC5-5AB7-4800-B1FA-54092F48BEB1}|Lab4\\Lab4.csproj|d:\\bstu\\oop\\labs\\lab4\\lab4\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5683CC5-5AB7-4800-B1FA-54092F48BEB1}|Lab4\\Lab4.csproj|solutionrelative:lab4\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5683CC5-5AB7-4800-B1FA-54092F48BEB1}|Lab4\\Lab4.csproj|d:\\bstu\\oop\\labs\\lab4\\lab4\\exeptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5683CC5-5AB7-4800-B1FA-54092F48BEB1}|Lab4\\Lab4.csproj|solutionrelative:lab4\\exeptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5683CC5-5AB7-4800-B1FA-54092F48BEB1}|Lab4\\Lab4.csproj|d:\\bstu\\oop\\labs\\lab4\\lab4\\zoo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5683CC5-5AB7-4800-B1FA-54092F48BEB1}|Lab4\\Lab4.csproj|solutionrelative:lab4\\zoo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Zoo.cs",
+              "DocumentMoniker": "D:\\BSTU\\OOP\\Labs\\Lab4\\Lab4\\Zoo.cs",
+              "RelativeDocumentMoniker": "Lab4\\Zoo.cs",
+              "ToolTip": "D:\\BSTU\\OOP\\Labs\\Lab4\\Lab4\\Zoo.cs",
+              "RelativeToolTip": "Lab4\\Zoo.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T14:22:44.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Exeptions.cs",
+              "DocumentMoniker": "D:\\BSTU\\OOP\\Labs\\Lab4\\Lab4\\Exeptions.cs",
+              "RelativeDocumentMoniker": "Lab4\\Exeptions.cs",
+              "ToolTip": "D:\\BSTU\\OOP\\Labs\\Lab4\\Lab4\\Exeptions.cs",
+              "RelativeToolTip": "Lab4\\Exeptions.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAqwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T13:32:00.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Animal.cs",
+              "DocumentMoniker": "D:\\BSTU\\OOP\\Labs\\Lab4\\Lab4\\Animal.cs",
+              "RelativeDocumentMoniker": "Lab4\\Animal.cs",
+              "ToolTip": "D:\\BSTU\\OOP\\Labs\\Lab4\\Lab4\\Animal.cs",
+              "RelativeToolTip": "Lab4\\Animal.cs",
+              "ViewState": "AgIAACUBAAAAAAAAAAAmwD4BAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T11:47:42.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\BSTU\\OOP\\Labs\\Lab4\\Lab4\\Program.cs",
+              "RelativeDocumentMoniker": "Lab4\\Program.cs",
+              "ToolTip": "D:\\BSTU\\OOP\\Labs\\Lab4\\Lab4\\Program.cs",
+              "RelativeToolTip": "Lab4\\Program.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAgwGQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T11:47:14.775Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
