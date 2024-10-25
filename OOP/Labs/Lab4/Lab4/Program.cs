@@ -127,3 +127,4 @@ finally
 {
     Console.WriteLine("Исключения обработаны");
 }
+lion.TryAssert(shark.z > 14);
