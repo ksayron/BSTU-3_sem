@@ -1,54 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\BSTU\\KPO\\Labs\\SELab17\\",
+  "WorkspaceRootPath": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\SELab17.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\SELab17.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\Lexer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\Lexer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Parm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\Parm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\Lexer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\Lexer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Parm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\Parm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\SE_Lab17.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\SE_Lab17.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\stdafx.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\stdafx.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Out.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\Out.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Log.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\Log.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\In.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\In.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Error.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\Error.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Out.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\Out.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\In.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\In.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\In.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Error.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\Error.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\In.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\In.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\in.txt.log||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\in.txt.log||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\LT.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\LT.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\in.txt.out||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\in.txt.out||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\IT.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\IT.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\IT.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\IT.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25CEACB8-EFDF-4C9A-B1F3-228264773DEB}|SELab17\\SELab17.vcxproj|solutionrelative:SELab17\\Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,162 +54,142 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "stdafx.h",
-              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\stdafx.h",
-              "RelativeDocumentMoniker": "SELab17\\stdafx.h",
-              "ToolTip": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\stdafx.h",
-              "RelativeToolTip": "SELab17\\stdafx.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "LT.h",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\LT.h",
+              "RelativeDocumentMoniker": "SELab17\\LT.h",
+              "ToolTip": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\LT.h",
+              "RelativeToolTip": "SELab17\\LT.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-15T11:53:44.236Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Parm.h",
-              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Parm.h",
-              "RelativeDocumentMoniker": "SELab17\\Parm.h",
-              "ToolTip": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Parm.h",
-              "RelativeToolTip": "SELab17\\Parm.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-15T11:53:23.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Out.h",
-              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Out.h",
-              "RelativeDocumentMoniker": "SELab17\\Out.h",
-              "ToolTip": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Out.h",
-              "RelativeToolTip": "SELab17\\Out.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-15T11:53:11.984Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T15:57:12.706Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Log.h",
-              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Log.h",
-              "RelativeDocumentMoniker": "SELab17\\Log.h",
-              "ToolTip": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Log.h",
-              "RelativeToolTip": "SELab17\\Log.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-15T11:53:05.024Z",
-              "EditorCaption": ""
+              "Title": "in.txt.log",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\in.txt.log",
+              "RelativeDocumentMoniker": "SELab17\\in.txt.log",
+              "ToolTip": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\in.txt.log",
+              "RelativeToolTip": "SELab17\\in.txt.log",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-30T15:44:06.796Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Error.h",
-              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Error.h",
-              "RelativeDocumentMoniker": "SELab17\\Error.h",
-              "ToolTip": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Error.h",
-              "RelativeToolTip": "SELab17\\Error.h",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "IT.h",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\IT.h",
+              "RelativeDocumentMoniker": "SELab17\\IT.h",
+              "ToolTip": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\IT.h",
+              "RelativeToolTip": "SELab17\\IT.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-15T11:52:46.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "In.h",
-              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\In.h",
-              "RelativeDocumentMoniker": "SELab17\\In.h",
-              "ToolTip": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\In.h",
-              "RelativeToolTip": "SELab17\\In.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-15T11:49:35.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T14:08:35.342Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Out.cpp",
-              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Out.cpp",
-              "RelativeDocumentMoniker": "SELab17\\Out.cpp",
-              "ToolTip": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Out.cpp",
-              "RelativeToolTip": "SELab17\\Out.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Title": "IT.cpp",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\IT.cpp",
+              "RelativeDocumentMoniker": "SELab17\\IT.cpp",
+              "ToolTip": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\IT.cpp",
+              "RelativeToolTip": "SELab17\\IT.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-15T11:47:46.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T13:58:57.119Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "In.cpp",
-              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\In.cpp",
-              "RelativeDocumentMoniker": "SELab17\\In.cpp",
-              "ToolTip": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\In.cpp",
-              "RelativeToolTip": "SELab17\\In.cpp",
-              "ViewState": "AgIAACsAAAAAAAAAAAAowFcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "In.h",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\In.h",
+              "RelativeDocumentMoniker": "SELab17\\In.h",
+              "ToolTip": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\In.h",
+              "RelativeToolTip": "SELab17\\In.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-30T12:42:19.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Lexer.cpp",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\Lexer.cpp",
+              "RelativeDocumentMoniker": "SELab17\\Lexer.cpp",
+              "ToolTip": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\Lexer.cpp",
+              "RelativeToolTip": "SELab17\\Lexer.cpp",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAE4BAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-15T11:47:36.176Z",
+              "WhenOpened": "2024-10-30T12:02:17.269Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Parm.cpp",
-              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Parm.cpp",
-              "RelativeDocumentMoniker": "SELab17\\Parm.cpp",
-              "ToolTip": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Parm.cpp",
-              "RelativeToolTip": "SELab17\\Parm.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-15T11:47:08.967Z",
+              "Title": "Lexer.h",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\Lexer.h",
+              "RelativeDocumentMoniker": "SELab17\\Lexer.h",
+              "ToolTip": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\Lexer.h",
+              "RelativeToolTip": "SELab17\\Lexer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-30T12:02:14.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Error.cpp",
-              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Error.cpp",
-              "RelativeDocumentMoniker": "SELab17\\Error.cpp",
-              "ToolTip": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Error.cpp",
-              "RelativeToolTip": "SELab17\\Error.cpp",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAowHAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "SE_Lab17.cpp",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\SE_Lab17.cpp",
+              "RelativeDocumentMoniker": "SELab17\\SE_Lab17.cpp",
+              "ToolTip": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\SE_Lab17.cpp",
+              "RelativeToolTip": "SELab17\\SE_Lab17.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-15T11:46:58.494Z",
+              "WhenOpened": "2024-10-30T12:01:57.067Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
+              "Title": "in.txt.out",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\in.txt.out",
+              "RelativeDocumentMoniker": "SELab17\\in.txt.out",
+              "ToolTip": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\in.txt.out",
+              "RelativeToolTip": "SELab17\\in.txt.out",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-30T11:45:20.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Log.cpp",
-              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Log.cpp",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\Log.cpp",
               "RelativeDocumentMoniker": "SELab17\\Log.cpp",
-              "ToolTip": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\Log.cpp",
+              "ToolTip": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\Log.cpp",
               "RelativeToolTip": "SELab17\\Log.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGYAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAswEwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-15T11:46:47.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T20:23:58.629Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SELab17.cpp",
-              "DocumentMoniker": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\SELab17.cpp",
-              "RelativeDocumentMoniker": "SELab17\\SELab17.cpp",
-              "ToolTip": "D:\\BSTU\\KPO\\Labs\\SELab17\\SELab17\\SELab17.cpp",
-              "RelativeToolTip": "SELab17\\SELab17.cpp",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAowHAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "In.cpp",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\In.cpp",
+              "RelativeDocumentMoniker": "SELab17\\In.cpp",
+              "ToolTip": "D:\\BSTU\\3sem\\KPO\\Labs\\SELab17\\SELab17\\In.cpp",
+              "RelativeToolTip": "SELab17\\In.cpp",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAuwCwAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-07T17:55:29.137Z",
+              "WhenOpened": "2024-10-29T20:24:45.446Z",
               "EditorCaption": ""
             }
           ]

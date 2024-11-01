@@ -1,103 +1,169 @@
 #include "stdafx.h"
+#include "Log.h"
+#include <iostream>
+#include <fstream>
+#include "Error.h"
+#include <cstdarg>
+#include <ctime>
 
-namespace Log
+using namespace Log;
+using namespace std;
+using namespace Parm;
+using namespace In;
+
+LOG Log::getlog(wchar_t logfile[])
 {
-	LOG getlog(wchar_t logfile[])
-	{
-		LOG log = Log::INITLOG;
+    LOG log;
+    ofstream* file = new ofstream(logfile, std::ios::trunc);
+    if (!file->is_open())
+    {
+        delete file;
+        ERROR_THROW(112);
+    }
+    wcscpy_s(log.logfile, logfile);
+    log.stream = file;
+    return log;
+}
 
-		log.stream = new std::ofstream(logfile);
-
-		if (!log.stream)
-			throw ERROR_THROW(112);
-
-		return log;
-	};
-
-
-	void WriteLine(LOG log, char* c, ...)
-	{
-		char** p = &c;
-
-		while (*p != "")
-		{
-			(*log.stream) << *p;
-			p += 1;
-		}
-	};
+void Log::WriteLine(LOG log, char* c, ...)
+{
+    char** p = &c;
+    int j = 0;
+    while (p[j] != "") {
+        *log.stream << p[j];
+        j++;
+    }
+}
 
 
-	void WriteLine(LOG log, wchar_t* c, ...)
-	{
-		wchar_t** p = &c;
-		char buffer[64];
+void Log::WriteLine(LOG log, wchar_t* c, ...)
+{
+    wchar_t** p = &c;
+    char buf[50];
+    int j = 0;
+    while (p[j] != L"") {
+        wcstombs(buf, p[j++], 50);
+        *log.stream << buf;
+    }
+}
 
-		while (*p != L"")
-		{
-			wcstombs(buffer, *p, sizeof(buffer));
-			(*log.stream) << buffer;
-			p += 1;
-		}
-	};
+void Log::WriteLog(LOG log)
+{
+    time_t rantime;
+    struct tm timeinfo;
+    char buffer[80];
+    time(&rantime);
+    localtime_s(&timeinfo, &rantime);
 
+    strftime(buffer, sizeof(buffer), "%d.%m.%Y %I:%M:%S", &timeinfo);
+    (*log.stream) << "---Протокол---" << buffer << " ---" << endl;
+}
 
-	void WriteLog(LOG log)
-	{
-		char buffer[PARM_MAX_SIZE];
+void Log::WriteParm(LOG log, PARM parm)
+{
+    char buf[80];
+    wcstombs(buf, parm.in, sizeof(buf));
+    (*log.stream) << buf << endl;
+    wcstombs(buf, parm.out, sizeof(buf));
+    (*log.stream) << buf << endl;
+    wcstombs(buf, parm.log, sizeof(buf));
+    (*log.stream) << buf << endl;
+}
 
-		time_t rawtime;
-		struct tm* timeinfo;
+void Log::WriteIn(LOG log, IN in)
+{
+    (*log.stream) << "Количество символов: " << in.size << endl
+        << "Пропущено: " << in.ignor << endl
+        << "Количество строк: " << in.lines << endl;
+}
 
-		time(&rawtime);
-		timeinfo = localtime(&rawtime);
+void Log::WriteError(LOG log, Error::ERROR er)
+{
+    if (log.stream) {
+        *log.stream << "Ошибка " << er.id << ": " << er.message; 
+        if (er.inext.line != -1) { 
+            *log.stream << ", строка " << er.inext.line << ", позиция " << er.inext.col << '\n';
+        }
+        else {
+            *log.stream << '\n';
+        }
+    }
+    else {
+        cout << "Ошибка " << er.id << ": " << er.message << '\n';
+        cout << "Строка " << er.inext.line << ", позиция " << er.inext.col << '\n';
+    }
 
-		strftime(buffer, PARM_MAX_SIZE, "Дата: %d.%m.%y %H:%M:%S", timeinfo);
-		(*log.stream) << "\n--—- Протокол ——--\n" << buffer << "\n";
-	};
+}
 
+void Log::WriteLexTable(LOG log, LT::LexTable& lextable)
+{
+    int currentLine = 1;
+    *log.stream << "\n\nТаблица лексем:\n";
+    *log.stream << setw(2) << setfill('0') << currentLine << " ";
+    for (int i = 0; i < lextable.size; i++) {
+        if (lextable.table[i].sn != currentLine) {
+            currentLine++;
+            *log.stream << "\n";
+            *log.stream << setw(2) << setfill('0') << currentLine << " ";
+            *log.stream << LT::GetEntry(lextable, i).lexema;
+        }
+        else {
+            *log.stream << LT::GetEntry(lextable, i).lexema;
+        }
+    }
+}
 
-	void WriteParm(LOG log, Parm::PARM parm)
-	{
-		char inInfo[PARM_MAX_SIZE];
-		char outInfo[PARM_MAX_SIZE];
-		char logInfo[PARM_MAX_SIZE];
+void Log::WriteIdTable(LOG log, IT::IdTable& idtable)
+{
+    int currentLine = 1; 
+    *log.stream << "\n\nТаблица идентификаторов:\n";
+    for (int i = 0; i < idtable.size; i++) {
+        IT::Entry ent = IT::GetEntry(idtable, i);
+        *log.stream << ent.id << ", ";
+        if (ent.iddatatype == 1)
+        {
+            *log.stream << "INT";
+        }
+        else {
+            *log.stream << "STR";
+        }
 
-		wcstombs(inInfo, parm.in, sizeof(inInfo));
-		wcstombs(outInfo, parm.out, sizeof(outInfo));
-		wcstombs(logInfo, parm.log, sizeof(logInfo));
+        *log.stream << ", ";
 
-		(*log.stream) << "--—- Параметры ——--\n"
-			<< " -in: \t" << inInfo << "\n"
-			<< " -out:\t" << outInfo << "\n"
-			<< " -log:\t" << logInfo << "\n";
-	};
+        if (ent.idtype == 1)
+        {
+            *log.stream << "V";
+        }
+        else if (ent.idtype == 2) {
+            *log.stream << "F";
+        }
+        else
+        {
+            *log.stream << "P";
+        }
 
+        *log.stream << ", " << ent.idxfirstLE << ", ";
 
-	void WriteIn(LOG log, In::IN in)
-	{
-		(*log.stream) << "--—- Исходные данные ——-- \n"
-			<< "Кол-во символов:\t" << in.size << "\n"
-			<< "Кол-во строк:   \t" << in.lines << "\n"
-			<< "Пропущенно:     \t" << in.ignor << "\n";
-	};
+        if (ent.iddatatype == IT::INT)
+        {
+            *log.stream << ent.value.vint;
+        }
+        else {
+            for (int j = 0; j < ent.value.vstr->len; j++)
+            {
+                *log.stream << ent.value.vstr->str[j];
+            }
+        }
+        *log.stream << endl;
+    }
+}
 
+void Log::Close(LOG log)
+{
+    if (log.stream->is_open())
+    {
+        log.stream->close();
+        delete log.stream;
+    }
+}
 
-	void WriteError(LOG log, Error::ERROR error)
-	{
-		if (error.id == 100)
-		{
-			cout << "Ошибка " << error.id << ": " << error.message << "\n";
-		}
-		else
-		{
-			(*log.stream) << "Ошибка " << error.id << ": " << error.message << " "
-				<< "строка " << error.inext.line << ", позиция: " << error.inext.col << std::endl;
-		}
-	};
-
-
-	void Close(LOG log)
-	{
-		log.stream->close();
-	}
-};

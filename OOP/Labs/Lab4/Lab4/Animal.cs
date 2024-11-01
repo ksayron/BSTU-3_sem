@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace Lab4
 {
@@ -13,7 +14,7 @@ namespace Lab4
         void Jump();
     }
     
-    public abstract class Animal
+    public abstract class Animal 
     {
 
         string name;
@@ -102,7 +103,7 @@ namespace Lab4
             get => base.Weight;
             set { if (value > 300 || value < 50)
                 {
-                    throw new NotValidWeight("хуйня");
+                    throw new NotValidWeight("Вес льва может находится в диапозоне 50-300");
                 }
                 else { base.Weight = value; }
             }    
@@ -114,7 +115,7 @@ namespace Lab4
             {
                 if (value < 1970)
                 {
-                    throw new NotValidYear("хуйня");
+                    throw new NotValidYear("Неподходящий возраст");
                 }
                 else { base.Year = value; }
             }
@@ -313,7 +314,7 @@ namespace Lab4
             }
             catch (NotValidZ ex)
             {
-                Console.WriteLine("какашки мне в кармашки");
+                Console.WriteLine("Первая передача");
                 throw ex;
             }
         }
@@ -352,9 +353,9 @@ namespace Lab4
         int depth;
         enum color
         {
-            Red = 0,
-            Green = 1,
-            Blue = 2,
+            Red = 2,
+            Green = 5,
+            Blue = Green ,
         }
     }
     public class AnimalComparer : IComparer<Animal>

@@ -47,10 +47,7 @@ let v2 = carried_v(4)(1); // 20
 
 console.log(v1, v2);
 //task 3
-function* moveObject(initialX, initialY) {
-  let x = initialX; 
-  let y = initialY;
-
+function* moveObject(x, y) {
 
   for(let i = 0; i < 10; i++) {
     const direction = prompt('Введите направление(влево-a, вправо-d, вверх-w, вниз-s)');
@@ -68,13 +65,12 @@ function* moveObject(initialX, initialY) {
         y--;
         break;  
     }
-
-    alert(`Вы находитесь в (${x}, ${y})`);
+console.log(x,y)
   }
   yield{x,y};
 }
 const generator = moveObject(0, 0);
-generator.next()
+generator.next();
 //task 4
 keyArray=[];
 for(let key in window) {

@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\BSTU\\AISD\\Huffman_Coding\\",
+  "WorkspaceRootPath": "D:\\BSTU\\3sem\\AISD\\Huffman_Coding\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8D2F0A2-C6E2-406E-8C27-2A38D5212C8A}|Huffman_Coding\\Huffman_Coding.vcxproj|D:\\BSTU\\AISD\\Huffman_Coding\\Huffman_Coding\\Huffman_Coding.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C8D2F0A2-C6E2-406E-8C27-2A38D5212C8A}|Huffman_Coding\\Huffman_Coding.vcxproj|D:\\BSTU\\3sem\\AISD\\Huffman_Coding\\Huffman_Coding\\Huffman_Coding.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C8D2F0A2-C6E2-406E-8C27-2A38D5212C8A}|Huffman_Coding\\Huffman_Coding.vcxproj|solutionrelative:Huffman_Coding\\Huffman_Coding.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Huffman_Coding.cpp",
-              "DocumentMoniker": "D:\\BSTU\\AISD\\Huffman_Coding\\Huffman_Coding\\Huffman_Coding.cpp",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\AISD\\Huffman_Coding\\Huffman_Coding\\Huffman_Coding.cpp",
               "RelativeDocumentMoniker": "Huffman_Coding\\Huffman_Coding.cpp",
-              "ToolTip": "D:\\BSTU\\AISD\\Huffman_Coding\\Huffman_Coding\\Huffman_Coding.cpp*",
-              "RelativeToolTip": "Huffman_Coding\\Huffman_Coding.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
+              "ToolTip": "D:\\BSTU\\3sem\\AISD\\Huffman_Coding\\Huffman_Coding\\Huffman_Coding.cpp",
+              "RelativeToolTip": "Huffman_Coding\\Huffman_Coding.cpp",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwD4AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-17T12:33:07.876Z",
               "EditorCaption": ""

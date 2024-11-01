@@ -127,17 +127,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="in.txt" />
+    <Text Include="in.txt.log" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="in.txt.out" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="Error.cpp" />
+    <ClCompile Include="FST.cpp" />
     <ClCompile Include="In.cpp" />
+    <ClCompile Include="IT.cpp" />
+    <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="Log.cpp" />
+    <ClCompile Include="LT.cpp" />
     <ClCompile Include="Out.cpp" />
     <ClCompile Include="Parm.cpp" />
-    <ClCompile Include="SELab17.cpp" />
+    <ClCompile Include="SE_Lab17.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Error.h" />
+    <ClInclude Include="FST.h" />
     <ClInclude Include="In.h" />
+    <ClInclude Include="IT.h" />
+    <ClInclude Include="Lexer.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="LT.h" />
     <ClInclude Include="Out.h" />
     <ClInclude Include="Parm.h" />
     <ClInclude Include="stdafx.h" />

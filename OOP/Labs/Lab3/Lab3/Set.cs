@@ -9,13 +9,13 @@ namespace Lab3
     internal class Set
     {
         #region
-        public int[] els;
+        public T[] els;
         public int size;
         public Developer dev;
         public Production prod;
         public Set (int size)
         {
-            els = new int[size];
+            els = new T[size];
             size = 0;
         }
 
@@ -103,7 +103,7 @@ namespace Lab3
         #endregion
         #region override
         // * пересечение множеств
-        public static Set operator *(Set set1, Set set2)
+        public static Set<T> operator *(Set<T> set1, Set<T> set2)
         {
             Set set3 = new Set(set1.size);
             for(int i = 0; i < set1.size; i++)

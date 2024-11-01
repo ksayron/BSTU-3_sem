@@ -2,7 +2,7 @@
 using System.Diagnostics;
 const int maxX= 15;
 const int maxY = 15;
-Lion lion = new Lion("leva",0,0,2004,123);
+Lion lion = new Lion("leva",0,0,2022,123);
 lion.MoveRight(maxX);
 Printer.IAmPrinting(lion);
 Animal animal = new Owl("Hieghel", 3, 4,2008,8);

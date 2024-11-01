@@ -1,112 +1,49 @@
-#include "stdafx.h"
-#include <iostream>
-#include <cwchar>
-#include <time.h>
+#include "Error.h"
+namespace Error {
+    ERROR errors[ERROR_MAX_ENTRY]{ 
+        ERROR_ENTRY(0, "Недопустимый код ошибки"),
+        ERROR_ENTRY(1, "Системный сбой"),
+        ERROR_ENTRY_NODEF(2),ERROR_ENTRY_NODEF(3),ERROR_ENTRY_NODEF(4),ERROR_ENTRY_NODEF(5),
+        ERROR_ENTRY_NODEF(6),ERROR_ENTRY_NODEF(7),ERROR_ENTRY_NODEF(8),ERROR_ENTRY_NODEF(9),
+        ERROR_ENTRY_NODEF10(10),ERROR_ENTRY_NODEF10(20),ERROR_ENTRY_NODEF10(30),ERROR_ENTRY_NODEF10(40),
+        ERROR_ENTRY_NODEF10(50),ERROR_ENTRY_NODEF10(60),ERROR_ENTRY_NODEF10(70),ERROR_ENTRY_NODEF10(80),
+        ERROR_ENTRY_NODEF10(90),
+        ERROR_ENTRY(100, "Параметр -in должен быть задан"),
+        ERROR_ENTRY_NODEF(101), ERROR_ENTRY_NODEF(102),ERROR_ENTRY_NODEF(103),
+        ERROR_ENTRY(104, "Превышена длина входного параметра"),
+        ERROR_ENTRY_NODEF(105),ERROR_ENTRY_NODEF(106),ERROR_ENTRY_NODEF(107),ERROR_ENTRY_NODEF(108),
+        ERROR_ENTRY_NODEF(109),
+        ERROR_ENTRY(110, "Ошибка открытия файла с исходным кодом (-in)"),
+        ERROR_ENTRY(111, "Недопустимый символ в исходном файле (-in)"),
+        ERROR_ENTRY(112, "Ошибка при создании файла протокола(-log)"),
+        ERROR_ENTRY(113, "Ошибка при создании таблицы лексем. Превышена ёмкость таблицы лексем"),
+        ERROR_ENTRY(114, "Ошибка при добавлении лексемы в таблицу. Таблица лексем заполнена"),
+        ERROR_ENTRY(115, "Ошибка при получении лексемы из таблицы. Недопустимый номер лексемы"),
+        ERROR_ENTRY(116, "Ошибка при создании таблицы идентификаторов. Превышена ёмкость таблицы идентификаторов"),
+        ERROR_ENTRY(117, "Ошибка при добавлении идентификатора в таблицу. Таблица идентификаторов заполнена"),
+        ERROR_ENTRY(118, "Ошибка при получении записи из таблицы идентификаторов. Недопустимый номер идентификатора"),
+        ERROR_ENTRY(119, "Превышено название идентификатора"), 
+        ERROR_ENTRY(120, "Не удалось определить лексему"),
+        ERROR_ENTRY(121, "Неопределенный тип данных"),
+        ERROR_ENTRY_NODEF(130),ERROR_ENTRY_NODEF(140),ERROR_ENTRY_NODEF(150),ERROR_ENTRY_NODEF(160),
+        ERROR_ENTRY_NODEF(170),ERROR_ENTRY_NODEF(180),ERROR_ENTRY_NODEF(190),ERROR_ENTRY_NODEF(200),
+        ERROR_ENTRY_NODEF(300),ERROR_ENTRY_NODEF(400),ERROR_ENTRY_NODEF(500),ERROR_ENTRY_NODEF(600),
+        ERROR_ENTRY_NODEF(700),ERROR_ENTRY_NODEF(800),ERROR_ENTRY_NODEF(900),
+    };
 
-#include "Error.h"		//обработка ошибок
-#include "Parm.h"		//обработка параметров
-#include "Log.h"		//работа с протоколом
-#include "In.h"			//ввод исходного файла
-#include "Out.h"
+    ERROR geterror(int id) {
+        if (id > 0 && id < ERROR_MAX_ENTRY) {
+            return errors[id];
+        }
+        return errors[0];
+    }
 
-
-using namespace std;
-
-
-int _tmain(int argc, _TCHAR* argv[])
-{
-	setlocale(LC_ALL, "russian");
-
-
-	cout << "--------- тест geterror ---------\n\n";
-	try { throw ERROR_THROW(100); }
-	catch (Error::ERROR e)
-	{
-		cout << "Ошибка " << e.id << ": " << e.message << "\n\n";
-	};
-
-
-	cout << "--------- тест geterrorin ---------\n\n";
-	try { throw ERROR_THROW_IN(111, 2, 3); }
-	catch (Error::ERROR e)
-	{
-		cout << "Ошибка " << e.id << ": " << e.message << ", строка " << e.inext.line << ", позиция " << e.inext.col << " \n\n";
-	};
-
-
-	cout << "--------- тест getparm ---------\n\n";
-	try {
-		Parm::PARM parm = Parm::getparm(argc, argv);
-		wcout << "-in:" << parm.in << ", -out:" << parm.out << ", -log:" << parm.log << "\n\n";
-
-
-	}
-	catch (Error::ERROR e)
-	{
-		cout << "Ошибка " << e.id << ": " << e.message << "\n\n";
-	}
-
-
-	cout << "--------- getin ----------\n\n";
-	try
-	{
-		Parm::PARM parm = Parm::getparm(argc, argv);
-		In::IN in = In::getin(parm.in);
-		if ((wcscmp(parm.in, parm.log) == 0) or (wcscmp(parm.out, parm.log) == 0) or (wcscmp(parm.in, parm.out) == 0)) {
-			throw ERROR_THROW(101);
-		}
-		cout << in.text << endl;
-		cout << "Всего символов: " << in.size << endl;
-		cout << "Всего строк: " << in.lines << endl;
-		cout << "Пропущено: " << in.ignor << endl;
-	}
-	catch (Error::ERROR e)
-	{
-		cout << "Ошибка " << e.id << ": " << e.message << endl;
-		if (e.id == 111) {
-			cout << "Cтрока " << e.inext.line << " позиция " << e.inext.col << "\n\n";
-		}
-	}
-
-	Out::OUT out = Out::INITOUT;
-	try {
-		Parm::PARM parm = Parm::getparm(argc, argv);
-		out = Out::getOut(parm.out);
-		In::IN in = In::getin(parm.in);
-		Out::WriteOut(out, in);
-		Out::Close(out);
-
-	}
-	catch (Error::ERROR e)
-	{
-		Out::WriteError(out, e);
-
-	}
-
-	Log::LOG log = Log::INITLOG;
-
-	try
-	{
-		Parm::PARM parm = Parm::getparm(argc, argv);
-		if ((wcscmp(parm.in, parm.log) == 0) or (wcscmp(parm.out, parm.log) == 0) or (wcscmp(parm.in, parm.out) == 0)) {
-			wcscat_s(parm.log, PARM_LOG_DEFAULT_EXT);
-			throw ERROR_THROW(101);
-		}
-		log = Log::getlog(parm.log);
-		Log::WriteLine(log, (char*)"Тест", (char*)" без ошибок \n", "");
-		Log::WriteLine(log, (wchar_t*)L"Тест", (wchar_t*)L" без ошибок \n", L"");
-		Log::WriteLog(log);
-		Log::WriteParm(log, parm);
-		In::IN in = In::getin(parm.in);
-		Log::WriteIn(log, in);
-		Log::Close(log);
-	}
-	catch (Error::ERROR e)
-	{
-		Log::WriteError(log, e);
-	};
-	system("pause");
-
-	return 0;
-}
-
+    ERROR geterrorin(int id, int line = -1, int col = -1) { 
+        if (id > 0 && id < ERROR_MAX_ENTRY) {
+            errors[id].inext.line = line;
+            errors[id].inext.col = col;
+            return errors[id];
+        }
+        return errors[0];
+    }
+};

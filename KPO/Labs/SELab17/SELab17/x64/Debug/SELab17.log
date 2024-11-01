@@ -1,18 +1,1 @@
-﻿  Error.cpp
-  In.cpp
-  Log.cpp
-  Out.cpp
-  Parm.cpp
-  SELab17.cpp
-  Создание кода...
-SELab17.obj : error LNK2005: wmain уже определен в Error.obj
-Parm.obj : error LNK2001: неразрешенный внешний символ "struct Error::ERROR __cdecl Error::geterror(int)" (?geterror@Error@@YA?AUERROR@1@H@Z).
-SELab17.obj : error LNK2001: неразрешенный внешний символ "struct Error::ERROR __cdecl Error::geterror(int)" (?geterror@Error@@YA?AUERROR@1@H@Z).
-Error.obj : error LNK2001: неразрешенный внешний символ "struct Error::ERROR __cdecl Error::geterror(int)" (?geterror@Error@@YA?AUERROR@1@H@Z).
-In.obj : error LNK2001: неразрешенный внешний символ "struct Error::ERROR __cdecl Error::geterror(int)" (?geterror@Error@@YA?AUERROR@1@H@Z).
-Log.obj : error LNK2001: неразрешенный внешний символ "struct Error::ERROR __cdecl Error::geterror(int)" (?geterror@Error@@YA?AUERROR@1@H@Z).
-Out.obj : error LNK2001: неразрешенный внешний символ "struct Error::ERROR __cdecl Error::geterror(int)" (?geterror@Error@@YA?AUERROR@1@H@Z).
-Error.obj : error LNK2019: ссылка на неразрешенный внешний символ "struct Error::ERROR __cdecl Error::geterrorin(int,int,int)" (?geterrorin@Error@@YA?AUERROR@1@HHH@Z) в функции wmain.
-In.obj : error LNK2001: неразрешенный внешний символ "struct Error::ERROR __cdecl Error::geterrorin(int,int,int)" (?geterrorin@Error@@YA?AUERROR@1@HHH@Z).
-SELab17.obj : error LNK2001: неразрешенный внешний символ "struct Error::ERROR __cdecl Error::geterrorin(int,int,int)" (?geterrorin@Error@@YA?AUERROR@1@HHH@Z).
-D:\BSTU\KPO\Labs\SELab17\x64\Debug\SELab17.exe : fatal error LNK1120: неразрешенных внешних элементов: 2
+﻿  SELab17.vcxproj -> D:\BSTU\3sem\KPO\Labs\SELab17\x64\Debug\SELab17.exe
