@@ -97,3 +97,17 @@ console.log(likesCount,likesCount2); // 12, 1
 
  let array = [1,2,3];
  console.log(sumValues(...array));
+ 
+//попросили написать пример вложенной деструктуризации
+ let animal ={
+  name:"Beaver",
+  age:24,
+  kids:[ {name:"Sam",age:11},{name:"Vic",age:8}]
+ }
+ let{
+  kids:[
+    {name,age},
+    {name:name2,age:age2}
+  ]
+ }=animal
+ console.log(name2)

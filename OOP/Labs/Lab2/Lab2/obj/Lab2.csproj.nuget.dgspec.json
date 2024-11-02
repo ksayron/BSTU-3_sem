@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\Lab2.csproj": {}
+    "D:\\BSTU\\3sem\\OOP\\Labs\\Lab2\\Lab2\\Lab2.csproj": {}
   },
   "projects": {
-    "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\Lab2.csproj": {
+    "D:\\BSTU\\3sem\\OOP\\Labs\\Lab2\\Lab2\\Lab2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\Lab2.csproj",
+        "projectUniqueName": "D:\\BSTU\\3sem\\OOP\\Labs\\Lab2\\Lab2\\Lab2.csproj",
         "projectName": "Lab2",
-        "projectPath": "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\Lab2.csproj",
+        "projectPath": "D:\\BSTU\\3sem\\OOP\\Labs\\Lab2\\Lab2\\Lab2.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\BSTU\\OOP\\Labs\\Lab2\\Lab2\\obj\\",
+        "outputPath": "D:\\BSTU\\3sem\\OOP\\Labs\\Lab2\\Lab2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
