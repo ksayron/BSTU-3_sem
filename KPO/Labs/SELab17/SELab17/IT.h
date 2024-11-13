@@ -22,9 +22,9 @@ namespace IT
 			int vint = TI_INT_DEFAULT;
 			struct
 			{
-				char len;
+				int len;
 				char str[TI_STR_MAXSIZE - 1];
-			} vstr[TI_STR_MAXSIZE];
+			} vstr;
 		} value;
 	};
 
@@ -44,4 +44,6 @@ namespace IT
 	int IsId(IdTable& idtable, std::string id);
 
 	void Delete(IdTable& idtable);
+
+	int IsVar(IdTable& idtable, std::string id);
 };

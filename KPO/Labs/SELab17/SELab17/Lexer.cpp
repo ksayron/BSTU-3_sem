@@ -279,7 +279,7 @@ namespace  Lexer
 				else if (words[i - 1].first == "string")
 				{
 					ent = { i+1,words[i].first,IT::STR,IT::V,TI_STR_DEFAULT };
-				}
+				}	
 				else {
 					ERROR_THROW(121);
 				}
@@ -303,6 +303,27 @@ namespace  Lexer
 
 			IT::Add(idtable, ent);
 		}
+		else if(words[i - 1].first == "=") {
+			
+			if(words[i].first[0] == (char)39) {
+				ent = { i + 1,words[i].first,IT::STR,IT::L,TI_STR_DEFAULT };
+				std::string strValue = words[i].first;
+				ent.value.vstr.len = words[i].first.size();
+				strncpy(ent.value.vstr.str, words[i].first.c_str(), TI_STR_MAXSIZE - 1);
+				IT::Add(idtable, ent);
+			}
+			else if (words[i].first[0] >= '0' && words[i].first[0] <= '9')
+			{
+				
+				ent = { i + 1, words[i].first, IT::INT, IT::L, TI_INT_DEFAULT };
+				ent.value.vint = stoi(words[i].first);
+				IT::Add(idtable, ent);
+			}
+			else {
+				//ERROR_THROW(121);
+			}
+			
+		}
 		else {
 
 		}
@@ -310,25 +331,25 @@ namespace  Lexer
 
 	}
 
-	void valueOfINT(LT::LexTable& lextable, IT::IdTable& idtable, int ind, std::vector<std::pair<std::string, int>> words, int indIdTab)
-	{
-		if (lextable.table[ind - 1].lexema == '=' && lextable.table[ind - 2].lexema == 'i')
-		{
-			int buf = IT::IsId(idtable, words[ind - 2].first);
-			idtable.table[buf].value.vint = std::stoi(words[ind].first);
-		}
-	}
+	//void valueOfINT(LT::LexTable& lextable, IT::IdTable& idtable, int ind, std::vector<std::pair<std::string, int>> words, int indIdTab)
+	//{
+	//	if (lextable.table[ind - 1].lexema == '=' && lextable.table[ind - 2].lexema == 'i')
+	//	{
+	//		int buf = IT::IsVar(idtable, words[ind - 2].first);
+	//		idtable.table[buf].value.vint = std::stoi(words[ind].first);
+	//	}
+	//}
 
-	void valueOfSTR(LT::LexTable& lextable, IT::IdTable& idtable, int ind, std::vector<std::pair<std::string, int>> words)
-	{
-		if (lextable.table[ind - 1].lexema == '=' && lextable.table[ind - 2].lexema == 'i')
-		{
-			int buf = IT::IsId(idtable, words[ind - 2].first);
-			std::string strValue = words[ind].first;
-			idtable.table[buf].value.vstr->len = (char)(strValue.length());
-			strncpy(idtable.table[buf].value.vstr->str, strValue.c_str(), TI_STR_MAXSIZE - 1);
-		}
-	}
+	//void valueOfSTR(LT::LexTable& lextable, IT::IdTable& idtable, int ind, std::vector<std::pair<std::string, int>> words)
+	//{
+	//	if (lextable.table[ind - 1].lexema == '=' && lextable.table[ind - 2].lexema == 'i')
+	//	{
+	//		int buf = IT::IsId(idtable, words[ind - 2].first);
+	//		std::string strValue = words[ind].first;
+	//		idtable.table[buf].value.vstr->len = (char)(strValue.length());
+	//		strncpy(idtable.table[buf].value.vstr->str, strValue.c_str(), TI_STR_MAXSIZE - 1);
+	//	}
+	//}
 
 	void Run(LT::LexTable& lextable, IT::IdTable& idtable, In::IN in) {
 
@@ -337,13 +358,13 @@ namespace  Lexer
 		int indLexTab = 0;
 		int indIdTab = 0;
 
-
 		int ind = 0;
 		int size = 0;
 		bool fCo = true;
 		bool fEnd = false;
 
 		std::vector<std::pair<std::string, int>> words;
+		
 
 		for (int i = 2; !fEnd;i++)
 		{
@@ -424,6 +445,7 @@ namespace  Lexer
 		int ch = 0;
 		int currLine = 0;
 		int lineNumb = 1;
+		int env = 1;
 
 		for (int i = 0;i < size;i++)
 		{
@@ -470,28 +492,32 @@ namespace  Lexer
 			}
 			else if (check(words[i].first, typeStringLiteral))
 			{
-				LT::Entry ent = { LEX_LITERAL,  words[i].second };
+				LT::Entry ent = { LEX_LITERAL,  words[i].second,indIdTab };
 				LT::Add(lextable, ent);
-				valueOfSTR(lextable, idtable, i, words);
+				checkElInIdTable(words, i, lextable, idtable, indIdTab);
+				//valueOfSTR(lextable, idtable, i, words);
 
 			}
 			else if (check(words[i].first, typeNumbLiteral))
 			{
-				LT::Entry ent = { LEX_LITERAL,  words[i].second };
+				LT::Entry ent = { LEX_LITERAL,  words[i].second,indIdTab };
 				LT::Add(lextable, ent);
-				valueOfINT(lextable, idtable, i, words, indIdTab);
+				checkElInIdTable(words, i, lextable, idtable, indIdTab);
+				//valueOfINT(lextable, idtable, i, words, indIdTab);
 			}
 			else if (check(words[i].first, typeRightBrace))
 			{
 				LT::Entry ent = { LEX_BRACELET,  words[i].second };
 				LT::Add(lextable, ent);
 				isFunc = false;
+				env--;
 			}
 			else if (check(words[i].first, typeLeftBrace))
 			{
 				LT::Entry ent = { LEX_LEFTBRACE,  words[i].second };
 				LT::Add(lextable, ent);
 				isFunc = true;
+				env++;
 			}
 			else if (check(words[i].first, typeRightThesis))
 			{
@@ -565,39 +591,42 @@ namespace  Lexer
 		std::cout << "\n\nТаблица идентификаторов:\n";
 		for (int i = 0; i < idtable.size; i++) {
 			IT::Entry ent = IT::GetEntry(idtable, i);
-			cout << ent.id << ", ";
+			cout << ent.id << ", \t";
 			if (ent.iddatatype == 1)
 			{
-				cout << "INT";
+				cout << "INT\t";
 			}
 			else {
-				cout << "STR";
+				cout << "STR\t";
 			}
 
 			cout << ", ";
 
 			if (ent.idtype == 1)
 			{
-				cout << "V";
+				cout << "V\t";
 			}
 			else if (ent.idtype == 2) {
-				cout << "F";
+				cout << "F\t";
 			}
-			else
+			else if(ent.idtype == 3)
 			{
-				cout << "P";
-			}
-
-			cout << ", " << ent.idxfirstLE << ", ";
-
-			if (ent.iddatatype == IT::INT)
-			{
-				cout << ent.value.vint;
+				cout << "P\t";
 			}
 			else {
-				for (int j = 0; j < ent.value.vstr->len; j++)
+				cout << "L\t";
+			}
+
+            if(ent.idtype==1||ent.idtype==4){
+				if (ent.iddatatype == IT::INT)
 				{
-					cout << ent.value.vstr->str[j];
+					cout << ent.value.vint;
+				}
+				else {
+					for (int j = 0; j < ent.value.vstr.len; j++)
+					{
+						cout << ent.value.vstr.str[j];
+					}
 				}
 			}
 			cout << endl;

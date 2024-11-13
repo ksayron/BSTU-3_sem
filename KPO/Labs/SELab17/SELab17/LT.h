@@ -31,6 +31,7 @@ namespace LT
         char lexema;
         int sn;
         int idxTi = LT_TI_NULLIDX;
+
     };
 
     struct LexTable

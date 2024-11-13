@@ -57,6 +57,17 @@ namespace IT
         return TI_NULLIDX;
     }
 
+    int IsVar(IdTable& idtable, std::string id)
+    {
+        for (int i = 0; i < idtable.size; i++)
+        {
+            if (idtable.table[i].id == id && idtable.table[i].idtype==1)
+                return i;
+        }
+        return TI_NULLIDX;
+    }
+
+
     void Delete(IdTable& idtable)
     {
         delete[] idtable.table;

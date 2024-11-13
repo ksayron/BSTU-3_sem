@@ -12,6 +12,7 @@
 #include <fstream>
 #include <ctime>
 #include <string.h>
+#include <stack>
 #include <mbstring.h>
 #include "In.h"
 #include "Error.h"
