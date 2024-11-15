@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="Lab4">
+      <HintPath>..\..\Lab4\Lab4\bin\Debug\net8.0\Lab4.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
