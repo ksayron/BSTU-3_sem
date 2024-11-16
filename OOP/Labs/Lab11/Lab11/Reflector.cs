@@ -9,10 +9,18 @@ namespace Lab11
 {
     public static class Reflector//<T> where T : class
     {
+        static string path = "file.txt";
+        static void FileCreate()
+        {
+          File.Create(path);
+        }
+        
         public static  string AssemblyName( object t)
         {
             Type type = t.GetType();
-            return type.Assembly.FullName;
+            using (StreamWriter swo = new StreamWriter(path, true))
+            { swo.WriteLine(type.Assembly.FullName); }
+                return type.Assembly.FullName;
         }
         public static bool IsPubConstr( object t ) 
         {
@@ -31,6 +39,13 @@ namespace Lab11
             {
                 list.Add( m.Name );
             }
+            using (StreamWriter swo = new StreamWriter(path,true))
+            {
+                foreach (var item in list)
+                {
+                    swo.WriteLine(item);
+                }; 
+            }
             return list;
         }
         public static List<string> publicPropAndFields(object t)
@@ -47,6 +62,13 @@ namespace Lab11
             {
                 list.Add(m.Name);
             }
+            using (StreamWriter swo = new StreamWriter(path,true))
+            {
+                foreach (var item in list)
+                {
+                    swo.WriteLine(item);
+                };
+            }
             return list;
         }
         public static List<string> GetInterfaces(object t)
@@ -57,6 +79,13 @@ namespace Lab11
             foreach (var m in interfaces)
             {
                 list.Add(m.Name);
+            }
+            using (StreamWriter swo = new StreamWriter(path,true))
+            {
+                foreach (var item in list)
+                {
+                    swo.WriteLine(item);
+                };
             }
             return list;
         }

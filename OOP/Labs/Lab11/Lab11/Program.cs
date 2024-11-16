@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Lab11;
 using Lab4;
+
 Lion lion = new Lion("biba", 0, 0, 2022, 200);
 string  assbl =Reflector.AssemblyName(lion);
 Console.WriteLine(assbl);
