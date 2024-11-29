@@ -135,6 +135,7 @@
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="LT.cpp" />
+    <ClCompile Include="MFST.cpp" />
     <ClCompile Include="Out.cpp" />
     <ClCompile Include="Parm.cpp" />
     <ClCompile Include="SELab18.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="Lexer.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="LT.h" />
+    <ClInclude Include="MFST.h" />
     <ClInclude Include="Out.h" />
     <ClInclude Include="Parm.h" />
     <ClInclude Include="stdafx.h" />

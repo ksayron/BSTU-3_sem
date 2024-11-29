@@ -149,9 +149,9 @@ void Log::WriteIdTable(LOG log, IT::IdTable& idtable)
             *log.stream << ent.value.vint;
         }
         else {
-            for (int j = 0; j < ent.value.vstr.len; j++)
+            for (int j = 0; j < ent.value.vstr->len; j++)
             {
-                *log.stream << ent.value.vstr.str[j];
+                *log.stream << ent.value.vstr->str[j];
             }
         }
         *log.stream << endl;

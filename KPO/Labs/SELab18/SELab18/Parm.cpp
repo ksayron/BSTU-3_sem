@@ -1,71 +1,52 @@
-#include "Parm.h"
+﻿#include "Parm.h"
 #include "Error.h"
+#include "stdafx.h"
 
-using namespace Parm;
 
-PARM Parm::getparm(int argc, _TCHAR* argv[])
+namespace Parm
 {
-    PARM parm;
-    bool enterIN = false, enterOut = false, enterLog = false;
 
-    for (int i = 1; i < argc; i++)
-    {
-        if (wcsncmp(argv[i], PARM_IN, wcslen(PARM_IN)) == 0)
-        {
-            if (wcslen(argv[i] + wcslen(PARM_IN)) >= PARM_MAX_SIZE)
-            {
-                ERROR_THROW(104);
-            }
-            wcscpy_s(parm.in, argv[i] + wcslen(PARM_IN));
-            enterIN = true;
-        }
-        else if (wcsncmp(argv[i], PARM_OUT, wcslen(PARM_OUT)) == 0)
-        {
-            if (wcslen(argv[i] + wcslen(PARM_OUT)) >= PARM_MAX_SIZE)
-            {
-                ERROR_THROW(104);
-            }
-            wcscpy_s(parm.out, argv[i] + wcslen(PARM_OUT));
-            enterOut = true;
-        }
-        else if (wcsncmp(argv[i], PARM_LOG, wcslen(PARM_LOG)) == 0)
-        {
-            if (wcslen(argv[i] + wcslen(PARM_LOG)) >= PARM_MAX_SIZE)
-            {
-                ERROR_THROW(104);
-            }
-            wcscpy_s(parm.log, argv[i] + wcslen(PARM_LOG));
-            enterLog = true;
-        }
-    }
+	PARM getparm(int argc, wchar_t* argv[])
+	{
+		PARM parm;
 
-    if (!enterIN)
-    {
-        ERROR_THROW(100);
-    }
+		
+		bool in_find = 0, out_find = 0, log_find = 0;
+		for (int i = 1; i < argc; i++)
+		{
+			if (wcslen(argv[i]) > PARM_MAX_SIZE) { throw ERROR_THROW(104); }
 
-    if (!enterOut)
-    {
-        wcscpy_s(parm.out, parm.in);
-        short len = wcslen(parm.out);
-        if (len + wcslen(PARM_OUT_DEFAULT_EXT) >= PARM_MAX_SIZE)
-        {
-            ERROR_THROW(104);
-        }
-        wcsncat_s(parm.out, PARM_OUT_DEFAULT_EXT, wcslen(PARM_OUT));
-    }
+			if (wcsstr(argv[i], PARM_IN))
+			{
+				wcscpy_s(parm.in, argv[i] + wcslen(PARM_IN));
+				in_find = 1;
+			}
+			if (wcsstr(argv[i], PARM_OUT))
+			{
+				wcscpy_s(parm.out, argv[i] + wcslen(PARM_OUT));
+				out_find = 1;
+			}
+			if (wcsstr(argv[i], PARM_LOG))
+			{
+				wcscpy_s(parm.log, argv[i] + wcslen(PARM_LOG));
+				log_find = 1;
+			}
+		}
 
-    if (!enterLog)
-    {
-        wcscpy_s(parm.log, parm.in);
-        short len = wcslen(parm.log);
-        if (len + wcslen(PARM_LOG_DEFAULT_EXT) >= PARM_MAX_SIZE)
-        {
-            ERROR_THROW(104);
-        }
-        wcsncat_s(parm.log, PARM_LOG_DEFAULT_EXT, wcslen(PARM_LOG));
-    }
+		
+		if (!in_find) throw ERROR_THROW(100);
 
-    return parm;
+		if (!out_find)
+		{
+			wcscpy_s(parm.out, parm.in);
+			wcscat_s(parm.out, PARM_OUT_DEFAULT_EXT);
+		}
+
+		if (!log_find)
+		{
+			wcscpy_s(parm.log, parm.in);
+			wcscat_s(parm.log, PARM_LOG_DEFAULT_EXT);
+		}
+		return parm;
+	}
 }
-

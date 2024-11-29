@@ -1,27 +1,27 @@
 #pragma once
-#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
-#include <typeinfo>
-#include <string>
-#include <locale>
-#include <stdlib.h> 
-#include <cwchar>
 #include <iomanip>
-#include <stdio.h>
-#include <tchar.h>
-#include <fstream>
+#include <cwchar>
+#include <TCHAR.H>
 #include <ctime>
-#include <string.h>
-#include <stack>
-#include <mbstring.h>
-#include "In.h"
+#include <utility>
+#include <fstream>
+#include <string>
+
 #include "Error.h"
-#include "Parm.h"
+#include "In.h"
 #include "Log.h"
+#include "Parm.h"
 #include "Out.h"
 #include "FST.h"
-#include "IT.h"
 #include "LT.h"
+#include "IT.h"
 #include "Lexer.h"
 #include "GRB.h"
+#include "MFST.h"
+
 using namespace std;
+
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable: 4996)

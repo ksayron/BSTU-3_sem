@@ -1,15 +1,17 @@
 ﻿#include "stdafx.h"
-#include "FST.h"
-#include <cstring>
-#include <iostream>
-#include <sstream>
-#include <vector>
-#include <utility>
 
-namespace  Lexer
-{
+#define MFST_TRACE_START std::cout<<std::setw(4)<<std::left<<"Øàã"<<":"\
+						 <<std::setw(20)<<std::left<<"Ïðàâèëî"\
+						 <<std::setw(30)<<std::left<<"Âõîäíàÿ ëåíòà"\
+						 <<std::setw(20)<<std::left<<"Ñòåê"\
+						 <<std::endl;
 
-	FST::FST typeInteger("", 8,
+
+LT::LexTable lextab = LT::Create(LT_MAXSIZE - 1);
+IT::IdTable idtab = IT::Create(TI_MAXSIZE - 1);
+
+bool typeInt(char word[]) {
+	FST::FST typeInt(word, 8,
 		FST::NODE(1, FST::RELATION('i', 1)),
 		FST::NODE(1, FST::RELATION('n', 2)),
 		FST::NODE(1, FST::RELATION('t', 3)),
@@ -19,8 +21,10 @@ namespace  Lexer
 		FST::NODE(1, FST::RELATION('r', 7)),
 		FST::NODE()
 	);
-
-	FST::FST typeString("", 7,
+	return FST::execute(typeInt);
+}
+bool typeString(char word[]) {
+	FST::FST typeString(word, 7,
 		FST::NODE(1, FST::RELATION('s', 1)),
 		FST::NODE(1, FST::RELATION('t', 2)),
 		FST::NODE(1, FST::RELATION('r', 3)),
@@ -29,8 +33,10 @@ namespace  Lexer
 		FST::NODE(1, FST::RELATION('g', 6)),
 		FST::NODE()
 	);
-
-	FST::FST typeFunction("", 9,
+	return FST::execute(typeString);
+}
+bool typeFunction(char word[]) {
+	FST::FST typeFunction(word, 9,
 		FST::NODE(1, FST::RELATION('f', 1)),
 		FST::NODE(1, FST::RELATION('u', 2)),
 		FST::NODE(1, FST::RELATION('n', 3)),
@@ -41,8 +47,10 @@ namespace  Lexer
 		FST::NODE(1, FST::RELATION('n', 8)),
 		FST::NODE()
 	);
-
-	FST::FST typeDeclare("", 8,
+	return FST::execute(typeFunction);
+}
+bool strDeclare(char word[]) {
+	FST::FST strDeclare(word, 8,
 		FST::NODE(1, FST::RELATION('d', 1)),
 		FST::NODE(1, FST::RELATION('e', 2)),
 		FST::NODE(1, FST::RELATION('c', 3)),
@@ -52,8 +60,10 @@ namespace  Lexer
 		FST::NODE(1, FST::RELATION('e', 7)),
 		FST::NODE()
 	);
-
-	FST::FST typeReturn("", 7,
+	return FST::execute(strDeclare);
+}
+bool strReturn(char word[]) {
+	FST::FST stReturn(word, 7,
 		FST::NODE(1, FST::RELATION('r', 1)),
 		FST::NODE(1, FST::RELATION('e', 2)),
 		FST::NODE(1, FST::RELATION('t', 3)),
@@ -62,16 +72,20 @@ namespace  Lexer
 		FST::NODE(1, FST::RELATION('n', 6)),
 		FST::NODE()
 	);
-
-	FST::FST typeMain("", 5,
+	return FST::execute(stReturn);
+}
+bool strMain(char word[]) {
+	FST::FST strMain(word, 5,
 		FST::NODE(1, FST::RELATION('m', 1)),
 		FST::NODE(1, FST::RELATION('a', 2)),
 		FST::NODE(1, FST::RELATION('i', 3)),
 		FST::NODE(1, FST::RELATION('n', 4)),
 		FST::NODE()
 	);
-
-	FST::FST typePrint("", 6,
+	return FST::execute(strMain);
+}
+bool strPrint(char word[]) {
+	FST::FST strPrint(word, 6,
 		FST::NODE(1, FST::RELATION('p', 1)),
 		FST::NODE(1, FST::RELATION('r', 2)),
 		FST::NODE(1, FST::RELATION('i', 3)),
@@ -79,558 +93,573 @@ namespace  Lexer
 		FST::NODE(1, FST::RELATION('t', 5)),
 		FST::NODE()
 	);
-
-	FST::FST typeSpace("", 2,
-		FST::NODE(1, FST::RELATION(' ', 1)),
+	return FST::execute(strPrint);
+}
+bool expression(char word[]) {
+	FST::FST expression(word, 2,
+		FST::NODE(4,
+			FST::RELATION('+', 1),
+			FST::RELATION('-', 1),
+			FST::RELATION('*', 1),
+			FST::RELATION('/', 1)),
 		FST::NODE()
 	);
-	FST::FST typeLeftBrace("", 2,
+	return FST::execute(expression);
+}
+bool leftBrace(char word[]) {
+	FST::FST leftBrace(word, 2,
 		FST::NODE(1, FST::RELATION('{', 1)),
 		FST::NODE()
 	);
-	FST::FST typeRightBrace("", 2,
+	return FST::execute(leftBrace);
+}
+bool rightBrace(char word[]) {
+	FST::FST rightbrace(word, 2,
 		FST::NODE(1, FST::RELATION('}', 1)),
 		FST::NODE()
 	);
-	FST::FST typeLeftThesis("", 2,
+	return FST::execute(rightbrace);
+}
+bool leftThesis(char word[]) {
+	FST::FST leftthesis(word, 2,
 		FST::NODE(1, FST::RELATION('(', 1)),
 		FST::NODE()
 	);
-	FST::FST typeRightThesis("", 2,
+	return FST::execute(leftthesis);
+}
+bool rightThesis(char word[]) {
+	FST::FST rightthesis(word, 2,
 		FST::NODE(1, FST::RELATION(')', 1)),
 		FST::NODE()
 	);
-	FST::FST typeSemicolon("", 2,
+	return FST::execute(rightthesis);
+}
+bool semicolon(char word[]) {
+	FST::FST semicolon(word, 2,
 		FST::NODE(1, FST::RELATION(';', 1)),
 		FST::NODE()
 	);
-	FST::FST typeComma("", 2,
+	return FST::execute(semicolon);
+}
+bool comma(char word[]) {
+	FST::FST comma(word, 2,
 		FST::NODE(1, FST::RELATION(',', 1)),
 		FST::NODE()
 	);
-	FST::FST typePlus("", 2,
+	return FST::execute(comma);
+}
+bool strPlus(char word[]) {
+	FST::FST pluslife(word, 2,
 		FST::NODE(1, FST::RELATION('+', 1)),
-		FST::NODE());
-	FST::FST typeMinus("", 2,
+		FST::NODE()
+	);
+	return FST::execute(pluslife);
+}
+bool strMinus(char word[]) {
+	FST::FST minuslife(word, 2,
 		FST::NODE(1, FST::RELATION('-', 1)),
-		FST::NODE());
-	FST::FST typeDel("", 2,
+		FST::NODE()
+	);
+	return FST::execute(minuslife);
+}
+bool del(char word[]) {
+	FST::FST del(word, 2,
 		FST::NODE(1, FST::RELATION('/', 1)),
-		FST::NODE());
-	FST::FST typeMulti("", 2,
+		FST::NODE()
+	);
+	return FST::execute(del);
+}
+bool multiplic(char word[]) {
+	FST::FST mult(word, 2,
 		FST::NODE(1, FST::RELATION('*', 1)),
-		FST::NODE());
-	FST::FST typeEquals("", 2,
+		FST::NODE()
+	);
+	return FST::execute(mult);
+}
+bool equal(char word[]) {
+
+	FST::FST equal(word, 2,
 		FST::NODE(1, FST::RELATION('=', 1)),
-		FST::NODE());
-	FST::FST typeSeparator("", 2,
-		FST::NODE(1, FST::RELATION('\n', 1)),
-		FST::NODE());
-
-	FST::FST typeIdentificator("", 2,
-		FST::NODE(52,
-			FST::RELATION('a', 0), FST::RELATION('b', 0),
-			FST::RELATION('c', 0), FST::RELATION('d', 0),
-			FST::RELATION('e', 0), FST::RELATION('f', 0),
-			FST::RELATION('g', 0), FST::RELATION('h', 0),
-			FST::RELATION('i', 0), FST::RELATION('j', 0),
-			FST::RELATION('k', 0), FST::RELATION('l', 0),
-			FST::RELATION('m', 0), FST::RELATION('n', 0),
-			FST::RELATION('o', 0), FST::RELATION('p', 0),
-			FST::RELATION('q', 0), FST::RELATION('r', 0),
-			FST::RELATION('s', 0), FST::RELATION('t', 0),
-			FST::RELATION('u', 0), FST::RELATION('v', 0),
-			FST::RELATION('w', 0), FST::RELATION('x', 0),
-			FST::RELATION('y', 0), FST::RELATION('z', 0),
-			FST::RELATION('a', 1), FST::RELATION('b', 1),
-			FST::RELATION('c', 1), FST::RELATION('d', 1),
-			FST::RELATION('e', 1), FST::RELATION('f', 1),
-			FST::RELATION('g', 1), FST::RELATION('h', 1),
-			FST::RELATION('i', 1), FST::RELATION('j', 1),
-			FST::RELATION('k', 1), FST::RELATION('l', 1),
-			FST::RELATION('m', 1), FST::RELATION('n', 1),
-			FST::RELATION('o', 1), FST::RELATION('p', 1),
-			FST::RELATION('q', 1), FST::RELATION('r', 1),
-			FST::RELATION('s', 1), FST::RELATION('t', 1),
-			FST::RELATION('u', 1), FST::RELATION('v', 1),
-			FST::RELATION('w', 1), FST::RELATION('x', 1),
-			FST::RELATION('y', 1), FST::RELATION('z', 1)
-		),
-
 		FST::NODE()
 	);
+	return FST::execute(equal);
+}
+bool literalString(char word[]) {
 
-
-	FST::FST typeStringLiteral("", 4,
-
-		FST::NODE(1,
-			FST::RELATION('\'', 1)),
-		FST::NODE(384,
-			FST::RELATION('!', 2), FST::RELATION('@', 2), FST::RELATION('#', 2), FST::RELATION('$', 2), FST::RELATION('%', 2), FST::RELATION('^', 2),
-			FST::RELATION('&', 2), FST::RELATION('*', 2), FST::RELATION('(', 2), FST::RELATION(')', 2), FST::RELATION('-', 2), FST::RELATION('_', 2),
-			FST::RELATION('+', 2), FST::RELATION('=', 2), FST::RELATION('~', 2), FST::RELATION('`', 2), FST::RELATION('1', 2), FST::RELATION('2', 2),
-			FST::RELATION('3', 2), FST::RELATION('4', 2), FST::RELATION('5', 2), FST::RELATION('6', 2), FST::RELATION('7', 2), FST::RELATION('8', 2),
-			FST::RELATION('9', 2), FST::RELATION('0', 2), FST::RELATION('	', 2), FST::RELATION(' ', 2), FST::RELATION('q', 2), FST::RELATION('w', 2),
-			FST::RELATION('e', 2), FST::RELATION('r', 2), FST::RELATION('t', 2), FST::RELATION('y', 2), FST::RELATION('u', 2), FST::RELATION('i', 2),
-			FST::RELATION('o', 2), FST::RELATION('p', 2), FST::RELATION('{', 2), FST::RELATION('[', 2), FST::RELATION('}', 2), FST::RELATION(']', 2),
-			FST::RELATION('\\', 2), FST::RELATION('|', 2), FST::RELATION('Q', 2), FST::RELATION('W', 2), FST::RELATION('R', 2), FST::RELATION('T', 2), FST::RELATION('Y', 2),
-			FST::RELATION('U', 2), FST::RELATION('I', 2), FST::RELATION('O', 2), FST::RELATION('P', 2), FST::RELATION('a', 2), FST::RELATION('s', 2),
-			FST::RELATION('d', 2), FST::RELATION('f', 2), FST::RELATION('g', 2), FST::RELATION('h', 2), FST::RELATION('j', 2), FST::RELATION('k', 2),
-			FST::RELATION('l', 2), FST::RELATION(':', 2), FST::RELATION(';', 2), FST::RELATION('\'', 2), FST::RELATION('"', 2), FST::RELATION('A', 2),
-			FST::RELATION('S', 2), FST::RELATION('D', 2), FST::RELATION('F', 2), FST::RELATION('G', 2), FST::RELATION('H', 2), FST::RELATION('J', 2),
-			FST::RELATION('K', 2), FST::RELATION('L', 2), FST::RELATION('z', 2), FST::RELATION('x', 2), FST::RELATION('c', 2), FST::RELATION('v', 2),
-			FST::RELATION('b', 2), FST::RELATION('n', 2), FST::RELATION('m', 2), FST::RELATION(',', 2), FST::RELATION('.', 2), FST::RELATION('/', 2),
-			FST::RELATION('Z', 2), FST::RELATION('X', 2), FST::RELATION('C', 2), FST::RELATION('V', 2), FST::RELATION('B', 2), FST::RELATION('N', 2),
-			FST::RELATION('M', 2), FST::RELATION('<', 2), FST::RELATION('>', 2), FST::RELATION('?', 2), FST::RELATION('ё', 2), FST::RELATION('Ё', 2),
-			FST::RELATION('й', 2), FST::RELATION('ц', 2), FST::RELATION('у', 2), FST::RELATION('к', 2), FST::RELATION('е', 2), FST::RELATION('н', 2),
-			FST::RELATION('г', 2), FST::RELATION('ш', 2), FST::RELATION('щ', 2), FST::RELATION('з', 2), FST::RELATION('х', 2), FST::RELATION('ъ', 2),
-			FST::RELATION('Й', 2), FST::RELATION('Ц', 2), FST::RELATION('У', 2), FST::RELATION('К', 2), FST::RELATION('Е', 2), FST::RELATION('Н', 2),
-			FST::RELATION('Г', 2), FST::RELATION('Ш', 2), FST::RELATION('Щ', 2), FST::RELATION('З', 2), FST::RELATION('Х', 2), FST::RELATION('Ъ', 2),
-			FST::RELATION('ф', 2), FST::RELATION('ы', 2), FST::RELATION('в', 2), FST::RELATION('а', 2), FST::RELATION('п', 2), FST::RELATION('р', 2),
-			FST::RELATION('о', 2), FST::RELATION('л', 2), FST::RELATION('д', 2), FST::RELATION('ж', 2), FST::RELATION('э', 2), FST::RELATION('Ф', 2),
-			FST::RELATION('Ы', 2), FST::RELATION('В', 2), FST::RELATION('А', 2), FST::RELATION('П', 2), FST::RELATION('Р', 2), FST::RELATION('О', 2),
-			FST::RELATION('Л', 2), FST::RELATION('Д', 2), FST::RELATION('Ж', 2), FST::RELATION('Э', 2), FST::RELATION('я', 2), FST::RELATION('ч', 2),
-			FST::RELATION('с', 2), FST::RELATION('м', 2), FST::RELATION('и', 2), FST::RELATION('т', 2), FST::RELATION('ь', 2), FST::RELATION('б', 2),
-			FST::RELATION('ю', 2), FST::RELATION('Я', 2), FST::RELATION('Ч', 2), FST::RELATION('С', 2), FST::RELATION('М', 2), FST::RELATION('И', 2),
-			FST::RELATION('Т', 2), FST::RELATION('Ь', 2), FST::RELATION('Б', 2), FST::RELATION('Ю', 2),
-			FST::RELATION('!', 1), FST::RELATION('@', 1), FST::RELATION('#', 1), FST::RELATION('$', 1), FST::RELATION('%', 1), FST::RELATION('^', 1),
-			FST::RELATION('&', 1), FST::RELATION('*', 1), FST::RELATION('(', 1), FST::RELATION(')', 1), FST::RELATION('-', 1), FST::RELATION('_', 1),
-			FST::RELATION('+', 1), FST::RELATION('=', 1), FST::RELATION('~', 1), FST::RELATION('`', 1), FST::RELATION('1', 1), FST::RELATION('2', 1),
-			FST::RELATION('3', 1), FST::RELATION('4', 1), FST::RELATION('5', 1), FST::RELATION('6', 1), FST::RELATION('7', 1), FST::RELATION('8', 1),
-			FST::RELATION('9', 1), FST::RELATION('0', 1), FST::RELATION('	', 1), FST::RELATION(' ', 1), FST::RELATION('q', 1), FST::RELATION('w', 1),
-			FST::RELATION('e', 1), FST::RELATION('r', 1), FST::RELATION('t', 1), FST::RELATION('y', 1), FST::RELATION('u', 1), FST::RELATION('i', 1),
-			FST::RELATION('o', 1), FST::RELATION('p', 1), FST::RELATION('{', 1), FST::RELATION('[', 1), FST::RELATION('}', 1), FST::RELATION(']', 1),
-			FST::RELATION('\\', 1), FST::RELATION('|', 1), FST::RELATION('Q', 1), FST::RELATION('W', 1), FST::RELATION('R', 1), FST::RELATION('T', 1), FST::RELATION('Y', 1),
-			FST::RELATION('U', 1), FST::RELATION('I', 1), FST::RELATION('O', 1), FST::RELATION('P', 1), FST::RELATION('a', 1), FST::RELATION('s', 1),
-			FST::RELATION('d', 1), FST::RELATION('f', 1), FST::RELATION('g', 1), FST::RELATION('h', 1), FST::RELATION('j', 1), FST::RELATION('k', 1),
-			FST::RELATION('l', 1), FST::RELATION(':', 1), FST::RELATION(';', 1), FST::RELATION('\'', 1), FST::RELATION('"', 1), FST::RELATION('A', 1),
-			FST::RELATION('S', 1), FST::RELATION('D', 1), FST::RELATION('F', 1), FST::RELATION('G', 1), FST::RELATION('H', 1), FST::RELATION('J', 1),
-			FST::RELATION('K', 1), FST::RELATION('L', 1), FST::RELATION('z', 1), FST::RELATION('x', 1), FST::RELATION('c', 1), FST::RELATION('v', 1),
-			FST::RELATION('b', 1), FST::RELATION('n', 1), FST::RELATION('m', 1), FST::RELATION(',', 1), FST::RELATION('.', 1), FST::RELATION('/', 1),
-			FST::RELATION('Z', 1), FST::RELATION('X', 1), FST::RELATION('C', 1), FST::RELATION('V', 1), FST::RELATION('B', 1), FST::RELATION('N', 1),
-			FST::RELATION('M', 1), FST::RELATION('<', 1), FST::RELATION('>', 1), FST::RELATION('?', 1), FST::RELATION('ё', 1), FST::RELATION('Ё', 1),
-			FST::RELATION('й', 1), FST::RELATION('ц', 1), FST::RELATION('у', 1), FST::RELATION('к', 1), FST::RELATION('е', 1), FST::RELATION('н', 1),
-			FST::RELATION('г', 1), FST::RELATION('ш', 1), FST::RELATION('щ', 1), FST::RELATION('з', 1), FST::RELATION('х', 1), FST::RELATION('ъ', 1),
-			FST::RELATION('Й', 1), FST::RELATION('Ц', 1), FST::RELATION('У', 1), FST::RELATION('К', 1), FST::RELATION('Е', 1), FST::RELATION('Н', 1),
-			FST::RELATION('Г', 1), FST::RELATION('Ш', 1), FST::RELATION('Щ', 1), FST::RELATION('З', 1), FST::RELATION('Х', 1), FST::RELATION('Ъ', 1),
-			FST::RELATION('ф', 1), FST::RELATION('ы', 1), FST::RELATION('в', 1), FST::RELATION('а', 1), FST::RELATION('п', 1), FST::RELATION('р', 1),
-			FST::RELATION('о', 1), FST::RELATION('л', 1), FST::RELATION('д', 1), FST::RELATION('ж', 1), FST::RELATION('э', 1), FST::RELATION('Ф', 1),
-			FST::RELATION('Ы', 1), FST::RELATION('В', 1), FST::RELATION('А', 1), FST::RELATION('П', 1), FST::RELATION('Р', 1), FST::RELATION('О', 1),
-			FST::RELATION('Л', 1), FST::RELATION('Д', 1), FST::RELATION('Ж', 1), FST::RELATION('Э', 1), FST::RELATION('я', 1), FST::RELATION('ч', 1),
-			FST::RELATION('с', 1), FST::RELATION('м', 1), FST::RELATION('и', 1), FST::RELATION('т', 1), FST::RELATION('ь', 1), FST::RELATION('б', 1),
-			FST::RELATION('ю', 1), FST::RELATION('Я', 1), FST::RELATION('Ч', 1), FST::RELATION('С', 1), FST::RELATION('М', 1), FST::RELATION('И', 1),
-			FST::RELATION('Т', 1), FST::RELATION('Ь', 1), FST::RELATION('Б', 1), FST::RELATION('Ю', 1)
-		),
-		FST::NODE(1,
-			FST::RELATION('\'', 3)),
+	FST::FST literalString(word, 2,
+		FST::NODE(140,
+			FST::RELATION('a', 1), FST::RELATION('a', 0), FST::RELATION('b', 1), FST::RELATION('b', 0), FST::RELATION('c', 1), FST::RELATION('c', 0),
+			FST::RELATION('d', 1), FST::RELATION('d', 0), FST::RELATION('e', 1), FST::RELATION('e', 0), FST::RELATION('f', 1), FST::RELATION('f', 0),
+			FST::RELATION('g', 1), FST::RELATION('g', 0), FST::RELATION('h', 0), FST::RELATION('h', 1), FST::RELATION('i', 0), FST::RELATION('i', 1),
+			FST::RELATION('j', 0), FST::RELATION('j', 1), FST::RELATION('k', 0), FST::RELATION('k', 1), FST::RELATION('l', 0), FST::RELATION('l', 1),
+			FST::RELATION('m', 0), FST::RELATION('m', 1), FST::RELATION('n', 0), FST::RELATION('n', 1), FST::RELATION('o', 0), FST::RELATION('o', 1),
+			FST::RELATION('p', 0), FST::RELATION('p', 1), FST::RELATION('q', 0), FST::RELATION('q', 1), FST::RELATION('r', 0), FST::RELATION('r', 1),
+			FST::RELATION('s', 0), FST::RELATION('s', 1), FST::RELATION('t', 0), FST::RELATION('t', 1), FST::RELATION('u', 0), FST::RELATION('u', 1),
+			FST::RELATION('v', 0), FST::RELATION('v', 1), FST::RELATION('w', 0), FST::RELATION('w', 1), FST::RELATION('x', 0), FST::RELATION('x', 1),
+			FST::RELATION('y', 0), FST::RELATION('y', 1), FST::RELATION('z', 0), FST::RELATION('z', 1), FST::RELATION('1', 0), FST::RELATION('1', 1),
+			FST::RELATION('2', 0), FST::RELATION('2', 1), FST::RELATION('3', 0), FST::RELATION('3', 1), FST::RELATION('4', 0), FST::RELATION('4', 1),
+			FST::RELATION('5', 0), FST::RELATION('5', 1), FST::RELATION('6', 0), FST::RELATION('6', 1), FST::RELATION('7', 0), FST::RELATION('7', 1),
+			FST::RELATION('8', 0), FST::RELATION('8', 1), FST::RELATION('9', 0), FST::RELATION('9', 1), FST::RELATION('0', 0), FST::RELATION('0', 1),
+			FST::RELATION('é', 1), FST::RELATION('é', 0), FST::RELATION('ö', 1), FST::RELATION('ö', 0), FST::RELATION('¸', 1), FST::RELATION('¸', 0),
+			FST::RELATION('ó', 1), FST::RELATION('ó', 0), FST::RELATION('ê', 1), FST::RELATION('ê', 0), FST::RELATION('å', 1), FST::RELATION('å', 0),
+			FST::RELATION('í', 1), FST::RELATION('í', 0), FST::RELATION('ã', 1), FST::RELATION('ã', 0), FST::RELATION('ø', 1), FST::RELATION('ø', 0),
+			FST::RELATION('ù', 1), FST::RELATION('ù', 0), FST::RELATION('ç', 1), FST::RELATION('ç', 0), FST::RELATION('õ', 1), FST::RELATION('õ', 0),
+			FST::RELATION('ú', 1), FST::RELATION('ú', 0), FST::RELATION('ô', 1), FST::RELATION('ô', 0), FST::RELATION('û', 1), FST::RELATION('û', 0),
+			FST::RELATION('â', 1), FST::RELATION('â', 0), FST::RELATION('à', 1), FST::RELATION('à', 0), FST::RELATION('ï', 1), FST::RELATION('ï', 0),
+			FST::RELATION('ð', 1), FST::RELATION('ð', 0), FST::RELATION('î', 1), FST::RELATION('î', 0), FST::RELATION('ë', 1), FST::RELATION('ë', 0),
+			FST::RELATION('ä', 1), FST::RELATION('ä', 0), FST::RELATION('æ', 1), FST::RELATION('æ', 0), FST::RELATION('ý', 1), FST::RELATION('ý', 0),
+			FST::RELATION('ÿ', 1), FST::RELATION('ÿ', 0), FST::RELATION('÷', 1), FST::RELATION('÷', 0), FST::RELATION('ñ', 1), FST::RELATION('ñ', 0),
+			FST::RELATION('ì', 1), FST::RELATION('ì', 0), FST::RELATION('è', 1), FST::RELATION('è', 0), FST::RELATION('ò', 1), FST::RELATION('ò', 0),
+			FST::RELATION('ü', 1), FST::RELATION('ü', 0), FST::RELATION('á', 1), FST::RELATION('á', 0), FST::RELATION('þ', 1), FST::RELATION('þ', 0),
+			FST::RELATION(' ', 0), FST::RELATION(' ', 1)),
 		FST::NODE()
 	);
+	return FST::execute(literalString);
+}
+bool literalInteger(char word[]) {
 
-	FST::FST typeNumbLiteral("", 2,
+	FST::FST literalInt(word, 2,
 		FST::NODE(20,
-			FST::RELATION('0', 0), FST::RELATION('1', 0), FST::RELATION('2', 0), FST::RELATION('3', 0), FST::RELATION('4', 0),
-			FST::RELATION('5', 0), FST::RELATION('6', 0), FST::RELATION('7', 0), FST::RELATION('8', 0), FST::RELATION('9', 0),
-			FST::RELATION('0', 1), FST::RELATION('1', 1), FST::RELATION('2', 1), FST::RELATION('3', 1), FST::RELATION('4', 1),
-			FST::RELATION('5', 1), FST::RELATION('6', 1), FST::RELATION('7', 1), FST::RELATION('8', 1), FST::RELATION('9', 1)),
+			FST::RELATION('0', 0), FST::RELATION('1', 0), FST::RELATION('2', 0),
+			FST::RELATION('3', 0), FST::RELATION('4', 0), FST::RELATION('5', 0),
+			FST::RELATION('6', 0), FST::RELATION('7', 0), FST::RELATION('8', 0),
+			FST::RELATION('9', 0), FST::RELATION('0', 1), FST::RELATION('1', 1),
+			FST::RELATION('2', 1), FST::RELATION('3', 1), FST::RELATION('4', 1),
+			FST::RELATION('5', 1), FST::RELATION('6', 1), FST::RELATION('7', 1),
+			FST::RELATION('8', 1), FST::RELATION('9', 1)),
 		FST::NODE()
-
 	);
+	return FST::execute(literalInt);
+}
+bool identif(char word[]) {
 
-	bool isFunc = false;
+	FST::FST identif(word, 2,
+		FST::NODE(54,
+			FST::RELATION('a', 1), FST::RELATION('a', 0), FST::RELATION('b', 1), FST::RELATION('b', 0),
+			FST::RELATION('c', 1), FST::RELATION('c', 0), FST::RELATION('d', 1), FST::RELATION('d', 0), FST::RELATION('e', 1), FST::RELATION('e', 0),
+			FST::RELATION('f', 1), FST::RELATION('f', 0), FST::RELATION('g', 1), FST::RELATION('g', 0), FST::RELATION('h', 0), FST::RELATION('h', 1), FST::RELATION('i', 0), FST::RELATION('i', 1),
+			FST::RELATION('j', 0), FST::RELATION('j', 1), FST::RELATION('k', 0), FST::RELATION('k', 1), FST::RELATION('l', 0), FST::RELATION('l', 1),
+			FST::RELATION('m', 0), FST::RELATION('m', 1), FST::RELATION('n', 0), FST::RELATION('n', 1), FST::RELATION('o', 0), FST::RELATION('o', 1),
+			FST::RELATION('p', 0), FST::RELATION('p', 1), FST::RELATION('q', 0), FST::RELATION('q', 1), FST::RELATION('r', 0), FST::RELATION('r', 1),
+			FST::RELATION('s', 0), FST::RELATION('s', 1), FST::RELATION('t', 0), FST::RELATION('t', 1), FST::RELATION('u', 0), FST::RELATION('u', 1),
+			FST::RELATION('v', 0), FST::RELATION('v', 1), FST::RELATION('w', 0), FST::RELATION('w', 1), FST::RELATION('x', 0), FST::RELATION('x', 1),
+			FST::RELATION('y', 0), FST::RELATION('y', 1), FST::RELATION('z', 0), FST::RELATION('z', 1)),
+		FST::NODE()
+	);
+	return FST::execute(identif);
+}
+bool strlenFunc(char word[]) {
+	FST::FST strlen(word, 7,
+		FST::NODE(1, FST::RELATION('s', 1)),
+		FST::NODE(1, FST::RELATION('t', 2)),
+		FST::NODE(1, FST::RELATION('r', 3)),
+		FST::NODE(1, FST::RELATION('l', 4)),
+		FST::NODE(1, FST::RELATION('e', 5)),
+		FST::NODE(1, FST::RELATION('n', 6)),
+		FST::NODE()
+	);
+	return FST::execute(strlen);
+}
+bool substrFunc(char word[]) {
+	FST::FST substr(word, 7,
+		FST::NODE(1, FST::RELATION('s', 1)),
+		FST::NODE(1, FST::RELATION('u', 2)),
+		FST::NODE(1, FST::RELATION('b', 3)),
+		FST::NODE(1, FST::RELATION('s', 4)),
+		FST::NODE(1, FST::RELATION('t', 5)),
+		FST::NODE(1, FST::RELATION('r', 6)),
+		FST::NODE()
+	);
+	return FST::execute(substr);
+}
+bool exprCheck(char* str)
+{
+	FST::FST expression(str, 2,
+		FST::NODE(4,
+			FST::RELATION('+', 1),
+			FST::RELATION('-', 1),
+			FST::RELATION('*', 1),
+			FST::RELATION('/', 1)),
+			FST::NODE()
+	);
+	return FST::execute(expression);
+}
 
-	bool check(std::string s, FST::FST fst)
+namespace Lexer
+{
+
+	void LexAnaliz(Parm::PARM parm, In::IN in)
 	{
-		fst.string = s;
-
-		return FST::execute(fst);
-	}
-
-	void checkElInIdTable(std::vector<std::pair<std::string, int>> words, int i, LT::LexTable& lextable, IT::IdTable& idtable, int indIdTab)
-	{
-		IT::Entry ent;
-
-		if (LT::GetEntry(lextable, i - 1).lexema == 'f')
+		Flags flags;
+		char symbol;
+		int line = 0;
+		char wordFuncParam[255] = "";
+		char wordFuncName[255] = "";
+		char bufferWord[255] = "";
+		int k = 0;
+		int countL = 0;
+		int type = 0;
+		int pr = 0;
+		for (int i = 0; i < in.size; i++)
 		{
-			if (IT::IsId(idtable, words[i].first) == TI_NULLIDX)
+			symbol = in.text[i];
+
+			if (symbol == '\n')
 			{
-				if (words[i - 2].first == "integer")
+				line++;
+				//paste(line, '|');
+				continue;
+			}
+			if (symbol != ' ' || (symbol == ' ' && in.text[i - 1] != '\'' && in.text[i + 1] != '\'' && flags.kavichka_flag))
+			{
+				bufferWord[k] = in.text[i];
+				k++;
+				continue;
+			}
+			else
+			{
+				bufferWord[k] = '\0';
+				pr++;
+				if (string(bufferWord) != "")
 				{
-					ent = { i+1,words[i].first,IT::INT,IT::F,TI_INT_DEFAULT };
-				}
-				else if (words[i - 2].first == "string") {
 
-					ent = { i+1,words[i].first,IT::STR,IT::F , TI_STR_DEFAULT };
-				}
-				else {
-					ERROR_THROW(121);
-				}
-			}
-			IT::Add(idtable, ent);
-		}
-		else if (LT::GetEntry(lextable, i - 1).lexema == 't' && LT::GetEntry(lextable, i - 2).lexema == 'd')
-		{
-			int buf = IT::IsId(idtable, words[i].first);
-			if ((IT::IsId(idtable, words[i].first) == TI_NULLIDX || idtable.table[buf].idtype == IT::P) || (IT::IsId(idtable, words[i].first) != TI_NULLIDX && isFunc))
-			{
-				if (words[i - 1].first == "integer")
-				{
-					ent = { i+1,words[i].first,IT::INT,IT::V,TI_INT_DEFAULT };
-				}
-				else if (words[i - 1].first == "string")
-				{
-					ent = { i+1,words[i].first,IT::STR,IT::V,TI_STR_DEFAULT };
-				}	
-				else {
-					ERROR_THROW(121);
-				}
-			}
-			IT::Add(idtable, ent);
-		}
-		else if (LT::GetEntry(lextable, i - 2).lexema == ',' || LT::GetEntry(lextable, i - 4).lexema == 'f')
-		{
-
-			if (words[i - 1].first == "integer")
-			{
-				ent = { i+1, words[i].first, IT::INT, IT::P, TI_INT_DEFAULT };
-			}
-			else if (words[i - 1].first == "string")
-			{
-				ent = { i+1,words[i].first,IT::STR,IT::P,TI_STR_DEFAULT };
-			}
-			else {
-				ERROR_THROW(121);
-			}
-
-			IT::Add(idtable, ent);
-		}
-		else if(words[i - 1].first == "=") {
-			
-			if(words[i].first[0] == (char)39) {
-				ent = { i + 1,words[i].first,IT::STR,IT::L,TI_STR_DEFAULT };
-				std::string strValue = words[i].first;
-				ent.value.vstr.len = words[i].first.size();
-				strncpy(ent.value.vstr.str, words[i].first.c_str(), TI_STR_MAXSIZE - 1);
-				IT::Add(idtable, ent);
-			}
-			else if (words[i].first[0] >= '0' && words[i].first[0] <= '9')
-			{
-				
-				ent = { i + 1, words[i].first, IT::INT, IT::L, TI_INT_DEFAULT };
-				ent.value.vint = stoi(words[i].first);
-				IT::Add(idtable, ent);
-			}
-			else {
-				//ERROR_THROW(121);
-			}
-			
-		}
-		else {
-
-		}
-		indIdTab++;
-
-	}
-
-	//void valueOfINT(LT::LexTable& lextable, IT::IdTable& idtable, int ind, std::vector<std::pair<std::string, int>> words, int indIdTab)
-	//{
-	//	if (lextable.table[ind - 1].lexema == '=' && lextable.table[ind - 2].lexema == 'i')
-	//	{
-	//		int buf = IT::IsVar(idtable, words[ind - 2].first);
-	//		idtable.table[buf].value.vint = std::stoi(words[ind].first);
-	//	}
-	//}
-
-	//void valueOfSTR(LT::LexTable& lextable, IT::IdTable& idtable, int ind, std::vector<std::pair<std::string, int>> words)
-	//{
-	//	if (lextable.table[ind - 1].lexema == '=' && lextable.table[ind - 2].lexema == 'i')
-	//	{
-	//		int buf = IT::IsId(idtable, words[ind - 2].first);
-	//		std::string strValue = words[ind].first;
-	//		idtable.table[buf].value.vstr->len = (char)(strValue.length());
-	//		strncpy(idtable.table[buf].value.vstr->str, strValue.c_str(), TI_STR_MAXSIZE - 1);
-	//	}
-	//}
-
-	void Run(LT::LexTable& lextable, IT::IdTable& idtable, In::IN in) {
-
-		int lineNumber = 1;
-		string bufWord = "";
-		int indLexTab = 0;
-		int indIdTab = 0;
-
-		int ind = 0;
-		int size = 0;
-		bool fCo = true;
-		bool fEnd = false;
-
-		std::vector<std::pair<std::string, int>> words;
-		
-
-		for (int i = 2; !fEnd;i++)
-		{
-			if (in.text[i] == '\n')
-			{
-				int k;
-				for (k = i+1; in.text[k] != '\n';k++)
-				{
-					if (in.text[k] == '\0')
+					if (typeInt(bufferWord))
 					{
-						fEnd = true;
-						break;
+						paste(line, LEX_INTEGER);
+						flags.typedata_flags = true;
+						type = 0;
 					}
-				}
-				if (bufWord != "")
-				{
-					words.push_back({ bufWord,lineNumber });
-					bufWord = "";
-					size++;
-				}
-				int bufInd = ind;
-
-				lineNumber++;
-			}
-			if (!fEnd)
-			{
-				if (in.text[i] == ' ' && fCo)
-				{
-					if (bufWord == "\n") {
-						bufWord = "";
-					}
-					if (bufWord != "")
+					else if (bufferWord[0] == '\'')
 					{
-						words.push_back({ bufWord,lineNumber });
-						bufWord = "";
-						ind++;
-						size++;
+						if (flags.kavichka_flag)
+						{
+							flags.kavichka_flag = false;
+						}
+						else
+						{
+							flags.kavichka_flag = true;
+						}
 					}
-
-				}
-				else if (in.text[i] == ',' || in.text[i] == ';' || in.text[i] == '{' || in.text[i] == '}' || in.text[i] == '(' || in.text[i] == ')' || in.text[i] == '*' || in.text[i] == '/' || in.text[i] == '+' || in.text[i] == '-' || in.text[i] == '=')
-				{
-					if (bufWord != "")
+					else if (typeString(bufferWord))
 					{
-						words.push_back({ bufWord,lineNumber });
-						bufWord = "";
-						size++;
+						paste(line, LEX_STRING);
+						flags.typedata_flags = true;
+						type++;
 					}
-					bufWord += in.text[i];
-					words.push_back({ bufWord, lineNumber });
-					bufWord = "";
-					size++;
-				}
-				else if (in.text[i] == '\'')
-				{
-					if (fCo)
+					else if (typeFunction(bufferWord))
 					{
-						fCo = false;
+						paste(line, LEX_FUNCTION);
+						flags.function_flags = true;
+					}
+					else if (strDeclare(bufferWord))
+					{
+						paste(line, LEX_DECLARE);
+					}
+					else if (strReturn(bufferWord))
+					{
+						paste(line, LEX_RETURN);
+					}
+					else if (strMain(bufferWord))
+					{
+						strcpy(wordFuncName, bufferWord);
+						paste(line, LEX_MAINFUNC);
+					}
+					else if (strPrint(bufferWord))
+					{
+						paste(line, LEX_PRINT);
+					}
+					else if (leftBrace(bufferWord))
+					{
+						paste(line, LEX_LEFTBRACE);
+					}
+					else if (rightBrace(bufferWord))
+					{
+						strcpy(wordFuncName, "");
+						paste(line, LEX_RIGHTBRACE);
+					}
+					else if (leftThesis(bufferWord))
+					{
+						paste(line, LEX_LEFTHESIS);
+						flags.thesis_flags = true;
+					}
+					else if (rightThesis(bufferWord))
+					{
+						paste(line, LEX_RIGHTHESIS);
+						flags.thesis_flags = false;
+						flags.static_func_flags = false;
+						flags.function_flags = false;
+						strcpy(wordFuncParam, "");
+					}
+					else if (semicolon(bufferWord))
+					{
+						paste(line, LEX_SEMICOLON);
+					}
+					else if (comma(bufferWord))
+					{
+						paste(line, LEX_COMMA);
+					}
+					else if (strPlus(bufferWord))
+					{
+						paste(line, LEX_PLUS);
+					}
+					else if (strMinus(bufferWord))
+					{
+						paste(line, LEX_MINUS);
+					}
+					else if (del(bufferWord))
+					{
+						paste(line, LEX_DIRSLASH);
+					}
+					else if (multiplic(bufferWord))
+					{
+						paste(line, LEX_MULTIPLICATION);
+					}
+					else if (equal(bufferWord))
+					{
+						paste(line, LEX_EQUAL);
+					}
+					else if (flags.kavichka_flag && literalString(bufferWord))
+					{
+						paste(line, LEX_LITERAL);
+						char l[5];
+						char L[5] = "L";
+						IT::Entry buff;
+						buff.idxfirstLE = pr;
+						itoa(countL, l, 10);
+						strcat(L, l);
+						strcpy(buff.id, L);
+						buff.iddatatype = IT::STR;
+						buff.idtype = IT::L;
+						buff.value.vstr->len = strlen(bufferWord) - 2;
+						strcpy(buff.value.vstr->str, bufferWord);
+						IT::Add(idtab, buff);
+					}
+					else if (!flags.kavichka_flag && literalInteger(bufferWord))
+					{
+						paste(line, LEX_LITERAL);
+						char L[5] = "l";
+						char l[5];
+						IT::Entry buff;
+						buff.idxfirstLE = pr;
+						itoa(countL, l, 10);
+						strcat(L, l);
+						strcpy(buff.id, L);
+						buff.iddatatype = IT::INT;
+						buff.idtype = IT::L;
+						buff.value.vint = atoi(bufferWord);
+						IT::Add(idtab, buff);
+					}
+					else if (identif(bufferWord))
+					{
+						flags.ident_flags = true;
+						paste(line, LEX_ID);
+						if (flags.function_flags && !flags.thesis_flags && !substrFunc(bufferWord) && !strlenFunc(bufferWord))
+						{
+							strcpy(wordFuncParam, bufferWord);
+							strcpy(wordFuncName, bufferWord);
+						}
+						if (substrFunc(bufferWord) || strlenFunc(bufferWord))
+						{
+							flags.static_func_flags = true;
+							strcpy(wordFuncParam, bufferWord);
+						}
 					}
 					else
 					{
-						fCo = true;
+						throw ERROR_THROW(117);
 					}
-					bufWord += in.text[i];
 				}
-				else
+			}
+			if (flags.function_flags && !flags.static_func_flags && !flags.thesis_flags && flags.ident_flags)//function
+			{
+				IT::Entry buff;
+				buff.idxfirstLE = pr;
+				strcpy(buff.id, bufferWord);
+				if (type == 0)
 				{
-					bufWord += in.text[i];
-				}
-			}
-		}
-
-		for (int i = 0;i < size;i++)
-		{
-			cout << words[i].first << endl;
-		}
-
-		int ch = 0;
-		int currLine = 0;
-		int lineNumb = 1;
-		int env = 1;
-
-		for (int i = 0;i < size;i++)
-		{
-			if (check(words[i].first, typeInteger))
-			{
-				LT::Entry ent = { LEX_INTEGER, words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeString))
-			{
-				LT::Entry ent = { LEX_STRING,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeFunction))
-			{
-				LT::Entry ent = { LEX_FUNCTION,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeDeclare))
-			{
-				LT::Entry ent = { LEX_DECLARE,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typePrint))
-			{
-				LT::Entry ent = { LEX_PRINT,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeReturn))
-			{
-				LT::Entry ent = { LEX_RETURN,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeMain))
-			{
-				LT::Entry ent = { LEX_MAIN,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeIdentificator))
-			{
-				LT::Entry ent = { LEX_ID,  words[i].second, indIdTab };
-				LT::Add(lextable, ent);
-				checkElInIdTable(words, i, lextable, idtable, indIdTab);
-			}
-			else if (check(words[i].first, typeStringLiteral))
-			{
-				LT::Entry ent = { LEX_LITERAL,  words[i].second,indIdTab };
-				LT::Add(lextable, ent);
-				checkElInIdTable(words, i, lextable, idtable, indIdTab);
-				//valueOfSTR(lextable, idtable, i, words);
-
-			}
-			else if (check(words[i].first, typeNumbLiteral))
-			{
-				LT::Entry ent = { LEX_LITERAL,  words[i].second,indIdTab };
-				LT::Add(lextable, ent);
-				checkElInIdTable(words, i, lextable, idtable, indIdTab);
-				//valueOfINT(lextable, idtable, i, words, indIdTab);
-			}
-			else if (check(words[i].first, typeRightBrace))
-			{
-				LT::Entry ent = { LEX_BRACELET,  words[i].second };
-				LT::Add(lextable, ent);
-				isFunc = false;
-				env--;
-			}
-			else if (check(words[i].first, typeLeftBrace))
-			{
-				LT::Entry ent = { LEX_LEFTBRACE,  words[i].second };
-				LT::Add(lextable, ent);
-				isFunc = true;
-				env++;
-			}
-			else if (check(words[i].first, typeRightThesis))
-			{
-				LT::Entry ent = { LEX_RIGHTHESIS,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeLeftThesis))
-			{
-				LT::Entry ent = { LEX_LEFTHESIS,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeSemicolon))
-			{
-				LT::Entry ent = { LEX_SEMICOLON,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeComma))
-			{
-				LT::Entry ent = { LEX_COMMA,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typePlus))
-			{
-				LT::Entry ent = { LEX_PLUS,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeMinus))
-			{
-				LT::Entry ent = { LEX_MINUS,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeMulti))
-			{
-				LT::Entry ent = { LEX_STAR,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeDel))
-			{
-				LT::Entry ent = { LEX_DIRSLASH,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeEquals))
-			{
-				LT::Entry ent = { LEX_EQUALS,  words[i].second };
-				LT::Add(lextable, ent);
-			}
-			else if (check(words[i].first, typeSeparator))
-			{
-				LT::Entry ent = { LEX_SEPARATOR,  words[i].second };
-				LT::Add(lextable, ent);
-				}
-			else {
-				ERROR_THROW(120);
-			}
-		}
-		std::cout << "\n\nТаблица лексем:";
-		currLine = 0;
-		for (int i = 0; i < size; i++) {
-			if (words[i].second != currLine) {
-				currLine++;
-				cout << "\n";
-				cout << setw(2) << setfill('0') << currLine << " ";
-				cout << LT::GetEntry(lextable, i).lexema;
-			}
-			else {
-				cout << LT::GetEntry(lextable, i).lexema;
-			}
-		}
-
-		cout << endl;
-		std::cout << "\n\nТаблица идентификаторов:\n";
-		for (int i = 0; i < idtable.size; i++) {
-			IT::Entry ent = IT::GetEntry(idtable, i);
-			cout << ent.id << ", \t";
-			if (ent.iddatatype == 1)
-			{
-				cout << "INT\t";
-			}
-			else {
-				cout << "STR\t";
-			}
-
-			cout << ", ";
-
-			if (ent.idtype == 1)
-			{
-				cout << "V\t";
-			}
-			else if (ent.idtype == 2) {
-				cout << "F\t";
-			}
-			else if(ent.idtype == 3)
-			{
-				cout << "P\t";
-			}
-			else {
-				cout << "L\t";
-			}
-
-            if(ent.idtype==1||ent.idtype==4){
-				if (ent.iddatatype == IT::INT)
-				{
-					cout << ent.value.vint;
+					buff.iddatatype = IT::INT;
 				}
 				else {
-					for (int j = 0; j < ent.value.vstr.len; j++)
+					buff.iddatatype = IT::STR;
+				}
+				buff.idtype = IT::F;
+				buff.value.vint = 0;
+				buff.value.vstr->len = 0;
+				strcpy(buff.value.vstr->str, "");
+				IT::Add(idtab, buff);
+				flags.ident_flags = false;
+				flags.declare_flags = false;
+			}
+			if (flags.static_func_flags && !flags.thesis_flags)
+			{
+				int k = 0;
+				for (int i = 0; i < idtab.size; i++)
+				{
+					if (strcmp(idtab.table[i].id, bufferWord) == 0)
 					{
-						cout << ent.value.vstr.str[j];
+						k++;
 					}
 				}
+				if (k == 0)
+				{
+					IT::Entry buff;
+					buff.idxfirstLE = pr;
+					strcpy(buff.id, bufferWord);
+					buff.iddatatype = IT::STR;
+					buff.idtype = IT::F;
+					buff.value.vint = 0;
+					buff.value.vstr->len = 0;
+					strcpy(buff.value.vstr->str, "");
+					IT::Add(idtab, buff);
+				}
+				flags.ident_flags = false;
 			}
-			cout << endl;
+
+			if (flags.ident_flags && (flags.function_flags || flags.static_func_flags) && flags.thesis_flags && flags.typedata_flags)
+			{
+				IT::Entry buff;
+				buff.idxfirstLE = pr;
+				char w[255];
+				strcpy(w, wordFuncName);
+				strcat(w, bufferWord);
+				strcpy(buff.id, w);
+
+				if (type == 0)
+				{
+					buff.iddatatype = IT::INT;
+				}
+				else {
+					buff.iddatatype = IT::STR;
+				}
+				buff.idtype = IT::P;
+				buff.value.vint = 0;
+				buff.value.vstr->len = 0;
+				strcpy(buff.value.vstr->str, "");
+				IT::Add(idtab, buff);
+				flags.ident_flags = false;
+				flags.typedata_flags = false;
+			}
+
+			if (flags.ident_flags && !flags.function_flags && !flags.static_func_flags && flags.typedata_flags)
+			{
+				IT::Entry buff;
+				buff.idxfirstLE = pr;
+				char w[255];
+				strcpy(w, wordFuncName);
+				strcat(w, bufferWord);
+				strcpy(buff.id, w);
+
+				if (type == 0)
+				{
+					buff.iddatatype = IT::INT;
+				}
+				else {
+					buff.iddatatype = IT::STR;
+				}
+				buff.idtype = IT::V;
+				buff.value.vint = 0;
+				buff.value.vstr->len = 0;
+				strcpy(buff.value.vstr->str, "");
+				IT::Add(idtab, buff);
+				flags.ident_flags = false;
+				flags.typedata_flags = false;
+			}
+			flags.ident_flags = false;
+			std::memset(bufferWord, '\0', strlen(bufferWord));
+			k = 0;
+		}
+		std::ofstream file;
+		file.open(parm.out);
+		if (file.fail())
+		{
+			throw ERROR_THROW(112);
+		}
+		file << "\n";
+		file << "\n\n";
+		file << std::setw(1727) << "|Name" << std::setw(2) << '|';
+		file << std::setw(10) << "|Type" << std::setw(2) << '|';
+		file << std::setw(15) << "|ID type" << std::setw(2) << '|';
+		file << std::setw(15) << "|Line" << std::setw(2) << '|';
+		file << std::setw(15) << "|Value" << std::setw(2) << '|';
+		file << "\n";
+		for (int i = 0; i < idtab.size; i++)
+		{
+			file << std::setw(18) << idtab.table[i].id << std::setw(2);
+
+			if (idtab.table[i].iddatatype == IT::INT)
+				file << std::setw(15) << "integer" << std::setw(2);
+			if (idtab.table[i].iddatatype == IT::STR)
+				file << std::setw(15) << "string" << std::setw(2);
+
+			if (idtab.table[i].idtype == IT::F)
+				file << std::setw(15) << "func" << std::setw(2);
+			else if (idtab.table[i].idtype == IT::P)
+				file << std::setw(15) << "parm" << std::setw(2);
+			else if (idtab.table[i].idtype == IT::L)
+				file << std::setw(15) << "literal" << std::setw(2);
+			else if (idtab.table[i].idtype == IT::V)
+				file << std::setw(15) << "variable" << std::setw(2);
+			else
+				file << std::setw(30);
+
+			file << std::setw(15) << idtab.table[i].idxfirstLE << std::setw(2);
+			if (exprCheck(idtab.table[i].id) == false)
+			{
+				if (idtab.table[i].iddatatype == IT::INT)
+					file << std::setw(15) << idtab.table[i].value.vint << std::setw(2) << std::setw(15) << " " << std::setw(2);
+			}
+			file << "\n\n";
+		}
+		file << "\n";
+		file << '0' << lextab.table[0].sn + 1 << ' ';
+		for (int i = 0; i < lextab.size; i++)
+		{
+			if (lextab.table[i].lexema[0] == '|')
+			{
+				file << '\n';
+				if (i != (lextab.size - 1))
+				{
+					if (lextab.table[i].sn + 1 < 10)
+						file << '0' << lextab.table[i].sn + 1 << ' ';
+					else
+						file << lextab.table[i].sn + 1 << ' ';
+				}
+				continue;
+			}
+			file << lextab.table[i].lexema;
+			cout << lextab.table[i].lexema;
+
+
+		}
+		file.close();
+		try
+		{
+			MFST_TRACE_START;
+			MFST::Mfst mfst(lextab, GRB::getGreibach());
+			mfst.start();
+			mfst.savededucation();
+			mfst.printrules();
+		}
+		catch (Error::ERROR e)
+		{
+			std::cout << "Îøèáêà " << e.id << ": " << e.message << std::endl;
+			std::cout << "ñòðîêà: " << e.inext.col << " ïîçèöèÿ: " << e.inext.line;
 		}
 	}
-}
 
+	void paste(int line, char ch) {
+		LT::Entry entry;
+		std::memset(entry.lexema, '\0', sizeof(char));
+		entry.lexema[0] = ch;
+		entry.lexema[1] = '\0';
+		entry.sn = line;
+		if (ch != 'i')
+		{
+			entry.idxTI = LT_TI_NULLIDX;
+		}
+		else {
+			entry.idxTI = idtab.size;
+		}
+		LT::Add(lextab, entry);
+	}
+}

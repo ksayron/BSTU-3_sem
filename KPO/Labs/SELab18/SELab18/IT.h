@@ -1,31 +1,31 @@
 #pragma once
-#define ID_MAXSIZE		5
-#define TI_MAXSIZE		4096
-#define TI_INT_DEFAULT	0x00000000
-#define TI_STR_DEFAULT	0x00
-#define TI_NULLIDX		0xffffffff
-#define TI_STR_MAXSIZE  255
+#define ID_MAXSIZE 5
+#define TI_MAXSIZE 4096
+#define TI_INT_DEFAULT 0x00000000
+#define TI_STR_DEFAULT 0x00
+#define TI_NULLIDX 0xffffffff
+#define TI_STR_MAXSIZE 255
 
 namespace IT
 {
 	enum IDDATATYPE { INT = 1, STR = 2 };
-	enum IDTYPE { V = 1, F = 2, P = 3, L = 4 };
+	enum IDTYPE { V = 1, F = 2, P = 3, L = 3 };
 
-	struct Entry
+	struct  Entry
 	{
 		int idxfirstLE;
-		std::string	id;
+		char id[ID_MAXSIZE];
 		IDDATATYPE iddatatype;
-		IDTYPE	idtype;
+		IDTYPE idtype;
 		union
 		{
-			int vint = TI_INT_DEFAULT;
+			int vint;
 			struct
 			{
-				int len;
+				char len;
 				char str[TI_STR_MAXSIZE - 1];
-			} vstr;
-		} value;
+			}vstr[TI_STR_MAXSIZE];
+		}value;
 	};
 
 	struct IdTable
@@ -41,9 +41,8 @@ namespace IT
 
 	Entry GetEntry(IdTable& idtable, int n);
 
-	int IsId(IdTable& idtable, std::string id);
+	int IsId(IdTable& idtable, char id[ID_MAXSIZE]);
 
-	void Delete(IdTable& idtable);
+	void DELETE(IdTable& idtable);
 
-	int IsVar(IdTable& idtable, std::string id);
 };
