@@ -1,4 +1,4 @@
-//task 1
+ц//task 1
 let user = {
   name: 'Masha',
   age: 21
