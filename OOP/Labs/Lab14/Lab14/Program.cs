@@ -11,6 +11,9 @@ namespace Lab14
             MultiThreading.Count(15);
             Console.WriteLine();
             MultiThreading.MultiCount(15);
+            Thread.Sleep(7000);
+            MultiThreading.Sekundomer();
+            Thread.Sleep(15000);
         }
     }
 }

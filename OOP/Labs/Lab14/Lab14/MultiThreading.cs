@@ -75,5 +75,22 @@ namespace Lab14
 
             }
         }
+        public static void Sekundomer()
+        {
+            int num = 0;
+            // устанавливаем метод обратного вызова
+            TimerCallback tm = new TimerCallback(Count);
+            // создаем таймер
+            Timer timer = new Timer(tm, num, 0, 1000);
+
+            Console.ReadLine();
+
+            void Count(object obj)
+            {
+
+                Console.WriteLine("Секунда прошла");
+ 
+            }
+        }
     }
 }
