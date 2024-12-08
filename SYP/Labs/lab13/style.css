@@ -1,0 +1,140 @@
+body{
+    background-color: rgba(0, 0, 0, 0.9);
+    font-family: sans-serif;
+}
+.main{
+    background-color: rgb(67, 67, 67);
+    width: 80%;
+    align-items: center;
+    font-family: sans-serif;
+    margin: 80px auto ;
+    border-radius: 25px;
+    padding-bottom: 70px;
+}
+h1{
+    padding-top: 20px;
+    text-align: center;
+    color:white;
+    font-family: sans-serif;
+    font-weight: 600;
+    -webkit-text-stroke: rgba(0, 0, 0, 0.723) 1px;
+    font-size: 50px;
+}
+h2{
+    text-align: center;
+    color:white;
+    font-family: sans-serif;
+    font-weight: 600;
+    -webkit-text-stroke: rgba(0, 0, 0, 0.723) 1px;
+    font-size: 36px;
+}
+.inputTask{
+    margin: 50px auto;
+    width: 70%;
+}
+#newTaskInput{
+    height: 40px;
+    width: 550px;
+    margin-right: 50px;
+    border-radius: 5px;
+    border-style: solid;
+}
+input::placeholder{
+    font-size: large;
+    font-weight: bolder;
+}
+.outputFilters{ 
+    display: flex;
+    margin: 50px auto;
+    width: 75%;
+    justify-content: space-between;
+    font-size: 20px;
+}
+#add{
+    color: white;
+    text-decoration: none;
+    background-color:rgb(55, 55, 55) ;
+    transition-duration: 0.5s;
+    border: 2px solid rgb(30, 30, 30);
+    border-radius: 10px;
+    height: 50px;
+    font-size: larger;
+
+}
+#add:hover{
+    background-color: rgb(119, 119, 119);
+}
+.outputFilters button{
+    color: white;
+    text-decoration: none;
+    background-color:rgb(55, 55, 55) ;
+    transition-duration: 0.5s;
+    border: 2px solid rgb(30, 30, 30);
+    border-radius: 10px;
+    height: 70px;
+    font-size: larger;
+    width: 30%;
+    
+
+}
+.outputFilters button:hover{
+    background-color: rgb(119, 119, 119);
+}
+.tasksList{
+    background-color: white;
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 25px;
+    transition-duration: 1s;
+}
+.task{
+    margin: 10px auto;
+    display: inline-flex;
+    width: 95%;
+    border: 2px solid black;
+    margin-left: 25px;
+    align-items: center;
+    border-radius: 15px;
+}
+.task input{
+    margin-left: 20px;
+    margin-right: 50px;
+    height: 25px;
+    width: 25px;
+}
+.task p{
+    width: 500px;
+    margin-right: 50px;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+.task button{
+    margin:  0px 20px;
+    height: 45px;
+    font-size: large;
+    border-style: none;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0px 15px;
+    transition-duration: 0.5s;
+    border: 1px solid black;
+}
+.task button img{
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+.task button[name="Edit"]{
+    background-color: rgb(150, 150, 90);
+}
+.task button[name="Edit"]:hover{
+    background-color: rgb(255, 255, 192);
+}
+.task button[name="Delete"]{
+    background-color: red;
+}
+.task button[name="Delete"]:hover{
+    background-color: rgb(255, 137, 137);
+}

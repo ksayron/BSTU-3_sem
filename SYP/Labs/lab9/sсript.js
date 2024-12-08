@@ -22,17 +22,17 @@ let small_square = {
   __proto__:square,
   width:50,
   height:50,
-
+  color:"green"
 };
 
 let circle = {
-  radius:100,
-  color:"white",
-  getSquare(){
-      return Math.PI*Math.pow(this.radius,2);
+  radius: 100,
+  color: "white",
+  getSquare() {
+    return Math.PI * Math.pow(this.radius, 2);
   },
-  getInfo(){
-      `This is a circle with radius ${this.radius} and it's color is ${this.color}`;
+  getInfo() {
+    return `This is a circle with radius ${this.radius} and it's color is ${this.color}`;
   }
 };
 
@@ -89,6 +89,9 @@ class Human{
   setAddress(NewAddress){
       this.address = NewAddress;
   }
+  walk(){
+    console.log('walking')
+  }
 };
 
 let human = new Human("Никита","Бобриков",2006,"Чурноса 24");
@@ -111,6 +114,10 @@ class Student extends Human{
   }
   getFullName(){
       return `${this.name} ${this.surname}`;
+  }
+  running(){
+    super.walk()
+    console.log('running')
   }
 }
 
@@ -162,6 +169,8 @@ FIT.students.push(student);
 FIT.students.push(student1);
 FIT.students.push(student2);
 FIT.students.push(student3);
+console.log(FIT);
 console.log(FIT.getDev());
 console.log(FIT.getGroup(6));
+student.running();
 console.groupEnd();
