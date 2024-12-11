@@ -1,11 +1,10 @@
 #pragma once
-#define TYPECHAR 1
-#define TYPEBOOL 2
+#include <string>
 class Desearealizer
 {
 public:
-	void Deserialize(char* valChar, bool* valBool);
+	void Deserialize(wchar_t* str, char* number);
 
 private:
 	const char* FILENAME = "../Serealizer/bin.bin";
-};
+};    

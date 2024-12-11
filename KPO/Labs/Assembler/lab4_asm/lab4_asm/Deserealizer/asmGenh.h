@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #define ASMHEADER \
 \
 << ".586P" << endl \
@@ -17,8 +18,8 @@
 class AsmGen
 {
 public:
-	void CreateFile(char* valChar, bool valBool);
+	void CreateFile(wchar_t str, char chr);
 
 private:
-	const char* ASMFILE = "../SE_asm2/asm.asm";
+	const char* ASMFILE = "../lab4_asm/asmFile.asm";
 };

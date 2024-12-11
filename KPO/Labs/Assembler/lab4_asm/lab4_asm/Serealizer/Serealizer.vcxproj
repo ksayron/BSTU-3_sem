@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{36df2ebb-10d7-4397-bb41-326148ddf58d}</ProjectGuid>
+    <ProjectGuid>{da05b1a3-6dd8-4742-8326-3483e868af6a}</ProjectGuid>
     <RootNamespace>Serealizer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -127,12 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Searealizer.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="stdafx.h" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Searealizer.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="bin.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bin.bin" />
