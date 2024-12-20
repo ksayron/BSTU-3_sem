@@ -1,0 +1,82 @@
+body{
+    background-color: rgba(0, 0, 0, 0.9);
+    font-family: sans-serif;
+}
+.main{
+    background-color: rgb(67, 67, 67);
+    width: 80%;
+    align-items: center;
+    font-family: sans-serif;
+    margin: 80px auto ;
+    border-radius: 25px;
+    padding-bottom: 70px;
+}
+h1{
+    padding-top: 20px;
+    text-align: center;
+    color:white;
+    font-family: sans-serif;
+    font-weight: 600;
+    -webkit-text-stroke: rgba(0, 0, 0, 0.723) 1px;
+    font-size: 50px;
+}
+h2{
+    text-align: center;
+    color:white;
+    font-family: sans-serif;
+    font-weight: 600;
+    -webkit-text-stroke: rgba(0, 0, 0, 0.723) 1px;
+    font-size: 36px;
+}
+
+.Menu{ 
+    display: flex;
+    margin: 50px auto;
+    width: 75%;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.Menu button{
+    color: white;
+    text-decoration: none;
+    background-color:rgb(55, 55, 55) ;
+    transition-duration: 0.5s;
+    border: 2px solid rgb(30, 30, 30);
+    border-radius: 10px;
+    height: 70px;
+    font-size: larger;
+    width: 30%;
+    
+
+}
+.Menu button:hover{
+    background-color: rgb(119, 119, 119);
+}
+.gameField{
+    background-color: white;
+    width: 50%;
+    margin: 20px auto;
+    border-radius: 25px;
+    transition-duration: 1s;
+    padding: 1px 0;
+}
+
+.sudoku-board {
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  
+  .sudoku-cell {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+    border: 5px solid #424242;
+    padding: 0;
+  }
+  
+  .sudoku-cell:focus {
+    outline: none;
+    border-color: #000;
+  }
