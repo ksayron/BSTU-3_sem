@@ -1,170 +1,127 @@
-let tasksIds = 1;
+function getRandomInt(upper) { return Math.floor( Math.random() * upper ); }
 
-class Task {
-  constructor(name, id) {
-    this.name = name;
-    this.id = id;
-    this.status = false;
+
+class Sudoku {
+  constructor() {
+      this.refillMatrix();
   }
 
-  setName(Newname) {
-    this.name = Newname;
+  
+  refillMatrix() {
+      this.matrix = Array.from({ length: 9 }, () => Array(9).fill(0));
   }
 
-  setStatusTrue() {
-    this.status = true;
+  
+  #checkRow(row) {
+      const seen = new Set();
+      for (let col = 0; col < 9; col++) {
+          const value = this.matrix[row][col];
+          if (value !== 0) {
+              if (seen.has(value)) return row + 1;
+              seen.add(value);
+          }
+      }
+      return null;
   }
 
-  setStatusFalse() {
-    this.status = false;
+  #checkColumn(col) {
+      const seen = new Set();
+      for (let row = 0; row < 9; row++) {
+          const value = this.matrix[row][col];
+          if (value !== 0) {
+              if (seen.has(value)) return col + 1; 
+              seen.add(value);
+          }
+      }
+      return null;
   }
-}
 
-class ToDoList {
-  constructor(name, id) {
-    this.id = id;
-    this.name = name;
-    this.list = [];
+  #checkSquare(rowStart, colStart) {
+      const seen = new Set();
+      for (let row = rowStart; row < rowStart + 3; row++) {
+          for (let col = colStart; col < colStart + 3; col++) {
+              const value = this.matrix[row][col];
+              if (value !== 0) {
+                  if (seen.has(value)) return [rowStart / 3 + 1, colStart / 3 + 1];
+                  seen.add(value);
+              }
+          }
+      }
+      return null;
   }
 
-  addTask(task) {
-    this.list.push(task);
-    this.showTask(task);
+  checkErrors() {
+      let errors = { rows: [], columns: [], squares: [] };
+
+      for (let i = 0; i < 9; i++) {
+          const rowError = this.#checkRow(i);
+          if (rowError) errors.rows.push(rowError);
+
+          const colError = this.#checkColumn(i);
+          if (colError) errors.columns.push(colError);
+      }
+
+      for (let row = 0; row < 9; row += 3) {
+          for (let col = 0; col < 9; col += 3) {
+              const squareError = this.#checkSquare(row, col);
+              if (squareError) errors.squares.push(`(${squareError[0]}, ${squareError[1]})`);
+          }
+      }
+
+      console.log("Проверка:");
+      if (!errors.rows.length && !errors.columns.length && !errors.squares.length)
+          return true;
+      else return false;
   }
-  removeTask(task) {
-    const taskIndex = this.list.indexOf(task);
-    if (taskIndex !== -1) {
-      this.list.splice(taskIndex, 1);
-      const taskDiv = document.querySelector(`.task[data-id="${task.id}"]`);
-        if (taskDiv) {
-        taskDiv.remove();
+
+
+  initializeSudoku() {
+    this.matrix.forEach((row, i) => {
+      row.forEach((_, j) => {
+        if (getRandomInt(100) < 50) {
+          let newValue = getRandomInt(8) + 1;
+          console.log(newValue);
+          if(this.#isValidMove(i,j,newValue)){
+            this.matrix[i][j] = newValue;
+          console.log(this.matrix[i][j]);}
         }
-      this.updateTaskList();
-      console.clear();
-      this.showTasks();
-    }
+      });
+    });
+  }
+  
+  generateMatrix() {
+      this.refillMatrix();
+      this.initializeSudoku();
   }
 
-  showTasks() {
-    console.group("Tasks");
-    this.list.forEach((element) => console.log(element));
-    console.groupEnd();
-  }
-
-  showTasksFilter(status) {
-    if (status) {
-      console.group("Done tasks");
-    } else {
-      console.group("Undone tasks");
-    }
-    this.list.forEach((element) => {
-      if (element.status == status) {
-        console.log(element);
+  // Проверка возможности установить число в ячейку
+  #isValidMove(row, col, num) {
+      for (let i = 0; i < 9; i++) {
+          if (this.matrix[row][i] === num || this.matrix[i][col] === num) return false;
       }
-    });
-    console.groupEnd();
+
+      const rowStart = Math.floor(row / 3) * 3;
+      const colStart = Math.floor(col / 3) * 3;
+      for (let r = rowStart; r < rowStart + 3; r++) {
+          for (let c = colStart; c < colStart + 3; c++) {
+              if (this.matrix[r][c] === num) return false;
+          }
+      }
+      return true;
   }
 
-  showTask(task) {
-    const taskDiv = document.createElement("div");
-    taskDiv.classList.add("task");
-    taskDiv.dataset.id = task.id;
-
-    const checkboxInput = document.createElement("input");
-    checkboxInput.type = "checkbox";
-    checkboxInput.name = "status";
-    checkboxInput.checked = task.status;
-    checkboxInput.addEventListener("change", () => {
-      task.status = checkboxInput.checked;
-    });
-
-    const nameP = document.createElement("p");
-    nameP.name = "name";
-    nameP.textContent = task.name;
-
-    const editButton = document.createElement("button");
-    editButton.name = "Edit";
-    editButton.innerHTML = '<img src="edit-svgrepo-com.svg" alt="">Редактировать';
-    editButton.addEventListener("click", () => {
-      const newName = prompt("Введите новое имя для вашего дела:");
-      task.setName(newName);
-      nameP.textContent = task.name;
-    });
-
-    const deleteButton = document.createElement("button");
-    deleteButton.name = "Delete";
-    deleteButton.innerHTML = '<img src="delete-1487-svgrepo-com.svg" alt=""> Удалить';
-    deleteButton.addEventListener("click", () => {
-      todolist.removeTask(task);
-    });
-
-    taskDiv.appendChild(checkboxInput);
-    taskDiv.appendChild(nameP);
-    taskDiv.appendChild(editButton);
-    taskDiv.appendChild(deleteButton);
-
-    document.querySelector(".tasksList").appendChild(taskDiv);
-    console.clear();
-    this.showTasks();
-  }
-  updateTaskList() {
-    const tasksList = document.querySelector(".tasksList");
-    tasksList.innerHTML = "";
-
-    this.list.forEach((task) => {
-      this.showTask(task);
-    });
-  }
-  updateTaskListOnlyTrue() {
-    const tasksList = document.querySelector(".tasksList");
-    tasksList.innerHTML = "";
-
-    this.list.forEach((task) => {
-        if(task.status){this.showTask(task);}
-    });
-  }
-    updateTaskListOnlyFalse() {
-    const tasksList = document.querySelector(".tasksList");
-    tasksList.innerHTML = "";
-
-    this.list.forEach((task) => {
-        if(!task.status){this.showTask(task);}
-    });
-  }
-
-
+  
 }
 
-let todolist = new ToDoList("main", 0);
+let sudoku = new Sudoku();
+sudoku.generateMatrix();
+console.log(sudoku.matrix);
+
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('add').addEventListener('click',
-    function addByClick() {
-      let name = document.getElementById('newTaskInput').value;
-      document.getElementById('newTaskInput').value = '';
-      let newTask = new Task(name, tasksIds++);
-      todolist.addTask(newTask);
-    }
-  );
-});
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('showAll').addEventListener('click',
+    document.getElementById('Restart').addEventListener('click',
       function addByClick() {
-        todolist.updateTaskList();
-      }
-    );
-  });
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('showTrue').addEventListener('click',
-      function addByClick() {
-        todolist.updateTaskListOnlyTrue();
-      }
-    );
-  });
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('showFalse').addEventListener('click',
-      function addByClick() {
-        todolist.updateTaskListOnlyFalse();
+        sudoku.generateMatrix();
       }
     );
   });

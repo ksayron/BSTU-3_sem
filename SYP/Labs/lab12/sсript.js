@@ -1,8 +1,11 @@
+
+
 class Sudoku {
     constructor() {
         this.refillMatrix();
     }
 
+    
     
     refillMatrix() {
         this.matrix = Array.from({ length: 9 }, () => Array(9).fill(0));
