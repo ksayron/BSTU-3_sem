@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\BSTU\\AISD\\Prim_Kraskal\\",
+  "WorkspaceRootPath": "D:\\BSTU\\3sem\\AISD\\Prim_Kraskal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{917C4D7E-AB79-4E94-B45D-0FDD57D67D63}|Prim_Kraskal\\Prim_Kraskal.vcxproj|D:\\BSTU\\AISD\\Prim_Kraskal\\Prim_Kraskal\\Prim_Kraskal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{917C4D7E-AB79-4E94-B45D-0FDD57D67D63}|Prim_Kraskal\\Prim_Kraskal.vcxproj|D:\\BSTU\\3sem\\AISD\\Prim_Kraskal\\Prim_Kraskal\\Prim_Kraskal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{917C4D7E-AB79-4E94-B45D-0FDD57D67D63}|Prim_Kraskal\\Prim_Kraskal.vcxproj|solutionrelative:Prim_Kraskal\\Prim_Kraskal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Prim_Kraskal.cpp",
-              "DocumentMoniker": "D:\\BSTU\\AISD\\Prim_Kraskal\\Prim_Kraskal\\Prim_Kraskal.cpp",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\AISD\\Prim_Kraskal\\Prim_Kraskal\\Prim_Kraskal.cpp",
               "RelativeDocumentMoniker": "Prim_Kraskal\\Prim_Kraskal.cpp",
-              "ToolTip": "D:\\BSTU\\AISD\\Prim_Kraskal\\Prim_Kraskal\\Prim_Kraskal.cpp",
+              "ToolTip": "D:\\BSTU\\3sem\\AISD\\Prim_Kraskal\\Prim_Kraskal\\Prim_Kraskal.cpp",
               "RelativeToolTip": "Prim_Kraskal\\Prim_Kraskal.cpp",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAqwIgAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAIgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-03T12:20:33.557Z",
               "EditorCaption": ""

@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\BSTU\\AISD\\Diykstra\\",
+  "WorkspaceRootPath": "D:\\BSTU\\3sem\\AISD\\Diykstra\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A58AE896-74EF-438A-8583-333486182468}|Diykstra\\Diykstra.vcxproj|D:\\BSTU\\AISD\\Diykstra\\Diykstra\\Diykstra.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A58AE896-74EF-438A-8583-333486182468}|Diykstra\\Diykstra.vcxproj|D:\\BSTU\\3sem\\AISD\\Diykstra\\Diykstra\\Diykstra.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A58AE896-74EF-438A-8583-333486182468}|Diykstra\\Diykstra.vcxproj|solutionrelative:Diykstra\\Diykstra.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Diykstra.cpp",
-              "DocumentMoniker": "D:\\BSTU\\AISD\\Diykstra\\Diykstra\\Diykstra.cpp",
+              "DocumentMoniker": "D:\\BSTU\\3sem\\AISD\\Diykstra\\Diykstra\\Diykstra.cpp",
               "RelativeDocumentMoniker": "Diykstra\\Diykstra.cpp",
-              "ToolTip": "D:\\BSTU\\AISD\\Diykstra\\Diykstra\\Diykstra.cpp",
+              "ToolTip": "D:\\BSTU\\3sem\\AISD\\Diykstra\\Diykstra\\Diykstra.cpp",
               "RelativeToolTip": "Diykstra\\Diykstra.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-19T14:03:32.852Z",
               "EditorCaption": ""
