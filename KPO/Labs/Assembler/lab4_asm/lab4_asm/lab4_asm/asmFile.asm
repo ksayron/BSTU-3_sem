@@ -1,40 +1,110 @@
-.586P
-.MODEL FLAT, STDCALL
-includelib kernel32.lib
+.586
+	.model flat, stdcall
+	includelib libucrt.lib
+	includelib kernel32.lib
+	includelib ../Debug/TDS-2022LIB.lib
+	ExitProcess PROTO :DWORD
 
-ExitProcess PROTO : DWORD
-MessageBoxA PROTO : DWORD, : DWORD, : DWORD, : DWORD
 
-.STACK 4096
+outputuint PROTO :DWORD
+outputchar PROTO :BYTE
+outputstr PROTO :DWORD
 
-.CONST
+.stack 4096
+.const
+divideOnZeroExeption BYTE "Попытка деления на ноль.", 0  ;STR, для вывода ошибки при делении на ноль
+	counter$LEX1 DWORD 0 ;INT
+	counter$LEX2 DWORD 1 ;INT
+	main$LEX3 DWORD -11 ;INT
+	main$LEX4 DWORD 5 ;INT
+	main$LEX5 BYTE "If works", 0  ;STR
+	main$LEX7 BYTE 'q' ;CHR
+	main$LEX8 BYTE "Symbol", 0  ;STR
+	main$LEX9 BYTE "Hello, World!", 0  ;STR
+	main$LEX10 DWORD 0 ;INT
+.data
+	mainnumber DWORD 0 ;INT
+	mainsymbol BYTE 0 ;CHR
+	mainline DWORD 0 ;STR
 
-.DATA
+.code
+$counter PROC uses ebx ecx edi esi ,	countercount: DWORD 
+While9Start: 
+mov eax, countercount
+mov ebx, counter$LEX1
+cmp eax, ebx
+jl While9End
 
-OK			EQU	0
-TEXT_MESSAGE		DB "SE_Asm04", 0
-HW			DD ?
+push countercount
+CALL outputuint
 
-FILEWCHAR_T DD 1083
-FILEINT DD 102
-strINT DB "char:     ", 0
-strWCHAR_T DB "wchar_t:     ", 0
+; String #4 :ivilv
+push countercount
+push counter$LEX2
+pop ebx
+pop eax
+sub eax, ebx
+push eax
+pop countercount
+jmp While9Start
+While9End: 
 
-.CODE
+mov eax, countercount
+ret
+$counter ENDP
 
 main PROC
 
-mov eax,FILEWCHAR_T
-mov strWCHAR_T+9, al
-invoke MessageBoxA, 0, offset strWCHAR_T, ADDR TEXT_MESSAGE, OK
+; String #13 :ivl
+push main$LEX3
+pop mainnumber
+
+If42Start: 
+mov eax, mainnumber
+mov ebx, main$LEX4
+cmp eax, ebx
+ja If42End
+
+push mainnumber
+CALL outputuint
+
+push offset main$LEX5
+CALL outputstr
+If42End: 
+
+; String #18 :ivil@1
+invoke $counter, main$LEX4
+push eax ;результат функции
+pop mainnumber
+
+; String #20 :ivl
+movzx eax, main$LEX7
+push eax 
+pop eax
+mov mainsymbol, al
+
+push offset main$LEX8
+CALL outputstr
+push eax
+movzx eax, mainsymbol
+push eax
+CALL outputchar
+pop eax
 
 
-mov eax,FILEINT
-mov strINT+5, al
-invoke MessageBoxA, 0, offset strINT, offset TEXT_MESSAGE, OK
+; String #26 :ivl
+push offset main$LEX9
+pop mainline
 
+push mainline
+CALL outputstr
 
-push - 1
-call ExitProcess
+mov eax, main$LEX10
+	jmp endPoint
+	div_by_0:
+	push offset divideOnZeroExeption
+CALL outputstr
+endPoint:
+	invoke		ExitProcess, eax
 main ENDP
 end main
