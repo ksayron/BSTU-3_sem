@@ -1,129 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Судоку</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="task-square-svgrepo-com.svg">
-    <script src="sсript.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Судоку</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    
-    <div class="main">
-        <h1>Судоку</h1>
-        <div class="Menu">
-            <button id="Restart">Начать заново</button>
-            <button id="showSolution">Проверить решение</button>
-        </div>
-        <h2>Игровое поле</h2>
-        <div class="gameField">
-            <table class="sudoku-board">
-                <tr>
-                  <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  </tr>
-                  <tr>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  </tr>
-                  <tr>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  </tr>
-                  <tr>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  </tr>
-                  <tr>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  </tr>
-                  <tr>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  </tr>
-                  <tr>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  </tr>
-                  <tr>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                    <td><input type="text" maxlength="1" class="sudoku-cell"></td>
-                  </tr>
-                                
-              </table>
-        </div>
-    </div>
-        
+  <h1>Судоку</h1>
+  <div class="board" id="sudoku-board"></div>
+  <div class="buttons">
+    <button id="generate-board">Новое поле</button>
+    <button id="validate-board">Проверить</button>
+    <button id="generate-solved-board">Показать решение</button>
+  </div>
+  <script src="script.js"></script>
 </body>
-        
 </html>
