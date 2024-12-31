@@ -32,19 +32,40 @@ namespace Lab15
                 );
             
         }
+        public void RunStore(Producer[] producers, Buyer[] buyers)
+        {
+            List<Action> actions = new List<Action>();
+
+            actions.Add(() => ShowInfo());
+            actions.Add(() => OpenShop());
+            foreach (var producer in producers)
+            {
+                actions.Add(() => producer.Produce(this));
+            }
+            foreach (var buyer in buyers)
+            {
+                actions.Add(() => buyer.Buy(this));
+            }
+
+
+            // Invoke all actions in parallel
+            Parallel.Invoke(actions.ToArray());
+        }
         public void ShowInfo()
         {
             while (isOpen)
             {
                 Console.Clear();
                 Console.WriteLine($"Магазин {name}");
-                Console.WriteLine($"баланс магазина {balance}");
+                Console.WriteLine($"Баланс магазина: {balance}");
+                Console.WriteLine($"Товаров на складе: {goods.Count}");
                 Console.WriteLine("Операции:");
 
                 // Display the produce and buy operations
+                if (transactions.Length > 1000) { transactions= transactions.Substring(0, 1000); transactions = transactions.Substring(0, transactions.LastIndexOf("\n")); }
                 Console.WriteLine(transactions);
 
-                Thread.Sleep(1000);
+                Thread.Sleep(600);
             }
 
         }
@@ -62,13 +83,22 @@ namespace Lab15
             balance -= good.price*amount;
 
         }
-        public bool BuyGood(Good item,int patience)
+        public Good BuyGood(int time)
         {
-            if(goods.TryTake(out item,patience)){
-            balance += item.price*2;
-                return true;
+            Good item;
+            var cancellationTokenSource = new CancellationTokenSource(time);
+
+            try
+            {
+                item = goods.Take(cancellationTokenSource.Token);
+                balance += item.price * 2;
+                return item;
             }
-            else { return false; }
+            catch (OperationCanceledException)
+            {
+            }
+
+            return null;
         }
     }
 
@@ -113,29 +143,29 @@ namespace Lab15
     public class Buyer
     {
         public string name;
-        public Good loved_item;
         int patience;
         string transanction_succes;
         string transanction_failed= "Ушел разочарованный покупатель\n";
-        public Buyer(string name,Good item,int patience)
+        public Buyer(string name,int patience)
         {
             this.name = name;
-            this.loved_item = item;
             this.patience = patience;
-            transanction_succes = $"{name} купила {loved_item.name} за {loved_item.price*2}$\n";
+            
         }
         public void Buy(Store store)
         {
             Thread.Sleep(1000);
             while(store.isOpen)
             {
-                if (store.BuyGood(loved_item,patience*1000))
+                var purcahse = store.BuyGood(patience * 1000);
+                if (purcahse is not null)
                 {
+                    transanction_succes = $"{name} купила {purcahse.name} за {purcahse.price * 2}$\n";
                     store.transactions = transanction_succes + store.transactions;
                 }
                 else { store.transactions = transanction_failed + store.transactions; }
 
-                Thread.Sleep(3000);
+                Thread.Sleep(1000);
             }
         }
     }

@@ -272,9 +272,9 @@ namespace Lab15
         }
         public static  async Task wait()
         {
-            var tomTask = PrintNameAsync("Tom");
-            var bobTask = PrintNameAsync("Bob");
-            var samTask = PrintNameAsync("Sam");
+            var tomTask = PrintNameAsync("slowdive");
+            var bobTask = PrintNameAsync("panchiko");
+            var samTask = PrintNameAsync("radiohead");
 
             await tomTask;
             await bobTask;
