@@ -28,35 +28,35 @@ max				DWORD		?
 .CODE			
 
 int_to_char PROC pstr : dword, intfield : sdword
-  mov edi, pstr                                                     ; копирует из pstr в edi
-  mov esi, 0                                                        ; количество символов в результате 
-  mov eax, intfield                                                 ; число -> в eax
-  cdq                                                               ; знак числа распространяется с eax на edx
-  mov ebx, 10                                                       ; основание системы счисления (10) -> ebx
-  idiv ebx                                                          ; eax = eax/ebx, остаток в edx (деление целых со знаком)
-  test eax, 80000000h                                               ; тестируем знаковый бит
-  jz plus                                                           ; если положительное число - на plus
-  neg eax                                                           ; иначе мнеяем знак eax
-  neg edx                                                           ; edx = -edx
-  mov cl, '-'                                                       ; первый символ результата '-'
-  mov[edi], cl                                                      ; первый символ результата '-'
-  inc edi                                                           ; ++edi
-  plus :                                                            ; цикл разложения по степеням 10
-  push dx                                                           ; остаток -> стек
-  inc esi                                                           ; ++esi
-  test eax, eax                                                     ; eax == ?
-  jz fin                                                            ; если да, то на fin
-  cdq                                                               ; знак распространяется с eax на edx 
-  idiv ebx                                                          ; eax = eax/ebx, остаток в edx
-  jmp plus                                                          ; безусловный переход на plus
-  fin :                                                             ; в ecx кол-во не 0-вых остатков = кол-ву символов результата
+  mov edi, pstr                                                    
+  mov esi, 0                                                      
+  mov eax, intfield                                                 
+  cdq                                                               
+  mov ebx, 10                                                       
+  idiv ebx                                                          
+  test eax, 80000000h                                               
+  jz plus                                                           
+  neg eax                                                           
+  neg edx                                                           
+  mov cl, '-'                                                       
+  mov[edi], cl                                                      
+  inc edi                                                           
+  plus :                                                            
+  push dx                                                           
+  inc esi                                                           
+  test eax, eax                                                     
+  jz fin                                                            
+  cdq                                                               
+  idiv ebx                                                          
+  jmp plus                                                          
+  fin :                                                             
   mov ecx, esi
-  write :                                                           ; цикл записи результата
-  pop bx                                                            ; остаток из стека -> bx
-  add bl, '0'                                                       ; сформировали символ в bl
-  mov[edi], bl                                                      ; bl -> в результат
-  inc edi                                                           ; edi++
-  loop write                                                        ; если (--ecx)>0 переход на write
+  write :                                                          
+  pop bx                                                           
+  add bl, '0'                                                      
+  mov[edi], bl                                                     
+  inc edi                                                          
+  loop write                                                       
   ret
 int_to_char ENDP
 
